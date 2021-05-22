@@ -1,6 +1,6 @@
 name: Deploy Document
 on:
-  push:
+  pull_request:
     branches: [ main ]
 jobs:
   build-document:
@@ -12,6 +12,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
+      - name: Disable Ignore
+        run: rm .gitignore
+        shell: bash
       - name: Deploy result
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
