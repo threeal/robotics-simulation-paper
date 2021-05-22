@@ -10,7 +10,7 @@ Paper ini dibuat sebagai syarat untuk memenuhi mata kuliah Tugas Akhir dari [Dep
 Repositori ini sendiri dibuat menggunakan template paper IEEE yang dapat diakses di [b201lab/template-paper-ieee](https://github.com/b201lab/template-paper-ieee).
 Informasi lebih lanjut mengenai penggunaan kode sumber ini bisa diakses di repositori tersebut.
 
-> File PDF dari paper ini bisa dilihat di [sini](https://threeal.github.io/paper-simulasi-robot/main.tex).
+> File PDF dari paper ini bisa dilihat di [sini](https://threeal.github.io/paper-simulasi-robot/main.pdf).
 
 ## Lisensi
 
