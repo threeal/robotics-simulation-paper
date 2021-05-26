@@ -5,19 +5,19 @@
 
 \begin{figure} [ht]
   \centering
-  \includegraphics[scale=0.4]{gambar/desainrobot.png}
-  \caption{Desain robot yang digunakan}
+  \includegraphics[scale=0.6]{gambar/desainrobot.png}
+  \caption{Diagram desain robot \emph{Dienen}}
   \label{fig:desainrobot}
 \end{figure}
 
-Robot yang akan digunakan pada pada penelitian ini memiliki desain gabungan antara robot IRIS \citep{dikairono2020} untuk setengah bagian bawahnya dan robot ICHIRO \citep{muhtadin2019} untuk setengah bagian atasnya.
-Desain ini secara umum dikenal sebagai \emph{mobile humanoid robot} \citep{mohamed2012}, yang merupakan desain gabungan antara robot mobile dan robot humanoid.
-Seperti yang terlihat pada Gambar \ref{fig:desainrobot}, bagian bawah robot menyerupai robot mobile dengan \emph{omnidirectional wheels} yang memungkinkan pergerakan ke segala arah secara dua dimensi \citep{oliveira2008}, sedangkan bagian atas robot menyerupai robot humanoid yang terdiri atas badan, kepala, dan lengan.
-Dengan desain mobile humanoid robot ini, diharapkan pengguna bisa merasakan interaksi sosial yang lebih baik dengan robot karena memiliki bentuk mendekati manusia \citep{rossi2018} sambil mempermudah navigasi dari robot ke berbagai tempat.
+Robot yang akan digunakan pada pada penelitian ini adalah robot \emph{Dienen} yang merupakan kelanjutan dari robot \emph{IRIS} \citep{dikairono2020}\citep{zanuar2019} dengan penambahan desain dari robot \emph{ICHIRO} \citep{muhtadin2019} di bagian atas robot.
+Desain seperti ini secara umum dikenal sebagai desain \emph{mobile humanoid robot} \citep{mohamed2012}, yang merupakan desain gabungan antara robot mobile dan robot humanoid.
+Seperti yang terlihat pada Gambar \ref{fig:desainrobot}, bagian bawah robot menyerupai robot mobile dengan penggerak \emph{omnidirectional wheels} yang memungkinkan pergerakan robot secara \emph{holonomic} ke segala arah\citep{oliveira2008}, sedangkan bagian atas robot menyerupai robot humanoid yang terdiri atas badan, kepala, dan lengan.
+Dengan desain mobile humanoid robot ini, diharapkan pengguna bisa merasakan interaksi sosial yang lebih baik dengan robot karena memiliki bentuk mendekati manusia \citep{rossi2018} sekaligus mempermudah navigasi dari robot ke berbagai tempat.
 
-Robot ini dilengkapi dengan beberapa sensor seperti IMU (\emph{inertial measurement unit}) untuk mengetahui orientasi dari robot, Lidar untuk mendeteksi objek lain di sekitar robot, dan sensor kamera di kepala untuk menangkap citra yang nantinya bisa digunakan untuk mendeteksi objek menggunakan visi komputer.
+Robot \emph{Dienen} dilengkapi dengan beberapa sensor seperti IMU (\emph{inertial measurement unit}) untuk mengetahui orientasi dari robot, \emph{rotary encoder} untuk melakukan perhitungan odometri dari robot, \emph{distance sensor} untuk mendeteksi adanya objek lain di sekitar robot, sensor kamera di kepala untuk menangkap citra, dan sensor \emph{depth camera} yang nantinya bisa digunakan untuk melakukan mapping dari ruangan.
 Selain itu robot ini juga dilengkapi dengan dua lengan seperti robot manipulator yang bisa diatur pada berbagai posisi dan orientasi \citep{iqbal2012}.
-Dengan adanya sensor dan lengan ini diharapkan robot mampu melakukan tindakan \emph{assistive} secara sosial sesuai dengan data yang didapatkan dari sensor yang ada.
+Dengan adanya sensor dan aktuator ini diharapkan robot mampu melakukan tindakan \emph{assistive} secara sosial sesuai dengan data yang didapatkan dari sensor yang ada.
 
 \subsection{Desain Kontroler Robot}
 
