@@ -6,7 +6,7 @@
 \begin{figure} [ht]
   \centering
   \includegraphics[scale=0.6]{gambar/desainrobot.png}
-  \caption{Diagram desain robot \emph{Dienen}}
+  \caption{Diagram desain robot \emph{Dienen}.}
   \label{fig:desainrobot}
 \end{figure}
 
@@ -21,34 +21,27 @@ Dengan adanya sensor dan aktuator ini diharapkan robot mampu melakukan tindakan 
 
 \subsection{Desain Kontroler Robot}
 
-\begin{figure*} [ht]
+\begin{figure} [ht]
   \centering
-  \includegraphics[scale=0.5]{gambar/kontrolerrobot.png}
-  \caption{Diagram sistem dari kontroler robot}
-  \label{fig:kontrolerrobot}
-\end{figure*}
+  \includegraphics[scale=0.45]{gambar/kontrolersimulasi.png}
+  \caption{Diagram sistem kontroler robot di simulasi.}
+  \label{fig:kontrolersimulasi}
+\end{figure}
 
-Kontroler robot yang digunakan untuk simulasi akan dikembangkan menggunakan ROS 2.
-Kontroler tersebut akan terpisah menjadi beberapa node seperti yang terlihat pada Gambar \ref{fig:kontrolerrobot}.
-Setiap node yang ada akan terhubung satu sama lain menggunakan sistem komunikasi antar proses ROS 2 yang berupa topics dan services.
+Kontroler robot yang digunakan untuk simulasi ini akan dikembangkan menggunakan ROS 2.
+Kontroler tersebut akan dipisah menjadi beberapa bagian dalam bentuk \emph{ROS 2 node} seperti yang terlihat pada Gambar \ref{fig:kontrolersimulasi}.
+Setiap node yang ada akan terhubung satu sama lain menggunakan sistem komunikasi antar proses ROS 2 yang berupa \emph{topics} dan \emph{services}.
 
-Bagian utama dari kontroler robot tersebut adalah node Behavior yang berisi program yang mengatur segala tindakan robot berdasarkan data yang didapat dari sensor yang ada di simulasi.
-Kemudian node Behavior tersebut akan terhubung dengan lima node lain yang merepresentasikan sensor dan aktuator yang ada pada robot.
-Kelima node tersebut akan terpasang di dalam cakupan simulator Gazebo dalam bentuk plugins, sehingga mampu digunakan untuk mengakses dan memanipulasi data yang ada di simulasi menggunakan sistem \emph{shared memory} pada Gazebo \citep{gazeboplugins}.
+Bagian utama dari kontroler robot tersebut adalah \emph{node behavior} yang berisi program yang mengatur segala tindakan robot berdasarkan data yang didapat dari sensor yang ada di simulasi.
+Kemudian node Behavior tersebut akan terhubung dengan empat node lain yang merepresentasikan sensor dan aktuator yang ada pada robot.
+Keempat node tersebut akan terpasang di dalam cakupan simulator Gazebo sebagai \emph{Gazebo plugins}, sehingga mampu digunakan untuk mengakses dan memanipulasi data yang ada di simulasi menggunakan sistem \emph{shared memory} pada Gazebo \citep{gazeboplugins}.
 
-Sistem ini dirancang secara terpisah agar node Behavior yang diujikan di lingkungan simulasi bisa langsung bekerja pada robot fisik dengan cara mengubah keseluruhan cakupan yang ada di simulator Gazebo, termasuk kelima node yang telah disebutkan sebelumnya, menjadi node yang memproses sensor dan aktuator yang ada pada robot fisik.
+\begin{figure} [ht] \centering
+  \includegraphics[scale=0.45]{gambar/kontrolerfisik.png}
+  \caption{Diagram sistem kontroler robot untuk robot fisik.}
+  \label{fig:kontrolerfisik}
+\end{figure}
+
+Sistem ini dirancang secara terpisah agar \emph{node Behavior} yang diujikan di lingkungan simulasi bisa langsung bekerja pada robot fisik.
+Seperti yang terlihat pada Gambar \ref{fig:kontrolerfisik}, transfer kontroler ke robot fisik dapat dilakukan dengan mengubah keseluruhan cakupan yang ada di simulator Gazebo, yang berupa empat node yang telah disebutkan sebelumnya, menjadi node yang memproses sensor dan aktuator yang ada pada robot fisik.
 Dengan ini pengujian yang dilakukan di simulasi bisa langsung diterapkan ketika diujikan pada robot fisik karena tidak perlunya pembuatan ulang kontroler yang menyesuaikan sistem yang ada pada robot.
-
-\subsection{Transfer Kontroler ke Robot Fisik}
-
-\begin{figure*} [ht] \centering
-  \includegraphics[scale=0.5]{gambar/transferkontroler.png}
-  \caption{Diagram sistem dari kontroler robot untuk robot fisik.}
-  \label{fig:transferkontroler}
-\end{figure*}
-
-Untuk memastikan kontroler robot juga bisa bekerja di luar lingkungan simulasi, pengujian juga akan dilakukan pada robot fisik dengan cara menjalankan node Behavior yang sebelumnya digunakan di lingkungan simulasi.
-Seperti yang terlihat pada Gambar \ref{fig:transferkontroler}, keseluruhan cakupan yang ada di simulator Gazebo akan digantikan dengan node-node lain yang memproses sensor dan aktuator yang ada pada robot fisik.
-Node-node tersebut akan terhubung dengan node Behavior menggunakan komunikasi antar proses yang ada di ROS 2.
-Untuk memastikan kontroler robot dapat bekerja dengan keseluruhan sensor dan aktuator yang ada di robot fisik, maka kedua cara pengujian yang dilakukan di lingkungan simulasi sebelumnya juga akan dilakukan pada robot fisik.
-Percobaan pemindahan ini dilakukan untuk memastikan bahwa pengujian yang dilakukan di lingkungan simulasi dapat digunakan untuk menggantikan pengujian yang dilakukan menggunakan robot fisik.
