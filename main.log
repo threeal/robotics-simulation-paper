@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.1)  27 MAY 2021 04:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.1)  28 MAY 2021 10:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -577,25 +577,65 @@ Package caption Info: End \AtBeginDocument code.
 dmap/pdftex.map}
 
 
-]) (./konten/4-desain-sistem.tex
-<gambar/desainrobot.png, id=91, 402.50375pt x 302.12875pt>
+] (./konten/3-ros-gazebo/a-ros2.tex)
+(./konten/3-ros-gazebo/b-gazebo.tex)) (./konten/4-desain-sistem.tex
+(./konten/4-desain-sistem/a-desain-robot.tex
+<gambar/desainrobot.png, id=95, 402.50375pt x 302.12875pt>
 File: gambar/desainrobot.png Graphic file (type png)
 <use gambar/desainrobot.png>
-Package pdftex.def Info: gambar/desainrobot.png  used on input line 8.
-(pdftex.def)             Requested size: 241.5041pt x 181.27864pt.
-<gambar/kontrolersimulasi.png, id=101, 512.91624pt x 261.97874pt>
+Package pdftex.def Info: gambar/desainrobot.png  used on input line 6.
+(pdftex.def)             Requested size: 221.37775pt x 166.17131pt.
+)
+(./konten/4-desain-sistem/b-desain-kontroler.tex
+<gambar/kontrolersimulasi.png, id=105, 512.91624pt x 261.97874pt>
 File: gambar/kontrolersimulasi.png Graphic file (type png)
 <use gambar/kontrolersimulasi.png>
-Package pdftex.def Info: gambar/kontrolersimulasi.png  used on input line 26.
+Package pdftex.def Info: gambar/kontrolersimulasi.png  used on input line 6.
 (pdftex.def)             Requested size: 230.81018pt x 117.88934pt.
  [2 <./gambar/desainrobot.png>]
-<gambar/kontrolerfisik.png, id=123, 512.91624pt x 231.86626pt>
+<gambar/kontrolerfisik.png, id=127, 512.91624pt x 231.86626pt>
 File: gambar/kontrolerfisik.png Graphic file (type png)
 <use gambar/kontrolerfisik.png>
-Package pdftex.def Info: gambar/kontrolerfisik.png  used on input line 40.
+Package pdftex.def Info: gambar/kontrolerfisik.png  used on input line 20.
 (pdftex.def)             Requested size: 230.81018pt x 104.33884pt.
-) (./konten/5-eksperimen.tex) (./konten/6-kesimpulan.tex) [3 <./gambar/kontrole
-rsimulasi.png> <./gambar/kontrolerfisik.png>] (./main.bbl
+)) (./konten/5-hasil-pengujian.tex
+(./konten/5-hasil-pengujian/a-pengujian-gerakan.tex
+<gambar/nodeujigeraksimulasi.png, id=129, 928.97063pt x 298.11375pt>
+File: gambar/nodeujigeraksimulasi.png Graphic file (type png)
+<use gambar/nodeujigeraksimulasi.png>
+Package pdftex.def Info: gambar/nodeujigeraksimulasi.png  used on input line 6.
+
+(pdftex.def)             Requested size: 232.24208pt x 74.52824pt.
+<gambar/nodeujigerakfisik.png, id=130, 684.30656pt x 76.03406pt>
+File: gambar/nodeujigerakfisik.png Graphic file (type png)
+<use gambar/nodeujigerakfisik.png>
+Package pdftex.def Info: gambar/nodeujigerakfisik.png  used on input line 13.
+(pdftex.def)             Requested size: 205.29355pt x 22.81038pt.
+LaTeX Font Info:    Trying to load font information for T1+newtxtt on input lin
+e 18.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/newtxtt/t1newtxtt.fd
+File: t1newtxtt.fd 2020/02/15 Font definitions for T1/newtxtt.
+)
+LaTeX Font Info:    Font shape `T1/newtxtt/m/n' will be
+(Font)              scaled to size 7.5pt on input line 18.
+
+Underfull \hbox (badness 2970) in paragraph at lines 18--21
+\T1/ptm/m/n/10 bar [][]4[][], di si-mu-la-si, \T1/ptm/m/it/10 no-de [][][] \T1/
+ptm/m/n/10 ak-an ter-hu-bung de-
+ []
+
+<<oml.cmap>><<oms.cmap>>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 26.
+<<omx.cmap>>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 26.
+)) (./konten/6-kesimpulan.tex [3 <./gambar/kontrolersimulasi.png> <./gambar/kon
+trolerfisik.png> <./gambar/nodeujigeraksimulasi.png> <./gambar/nodeujigerakfisi
+k.png>]) (./main.bbl
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
 1.
 
@@ -607,14 +647,6 @@ Underfull \hbox (badness 3579) in paragraph at lines 78--81
 Xiv prep-rint
  []
 
-<<oml.cmap>><<oms.cmap>>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 185.
-<<omx.cmap>>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 185.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 185.
 )
 
 ** Conference Paper **
@@ -627,31 +659,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-
-Overfull \vbox (1.44785pt too high) has occurred while \output is active []
-
-
 [4] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7F4079A6D05030D84AB6DD53AA25320E;1363.
+(rerunfilecheck)             Checksum: 2713C94FF1CC8CD734BB1DB884D63E4B;1537.
  ) 
 Here is how much of TeX's memory you used:
- 13750 strings out of 478994
- 213198 string characters out of 5860203
- 830410 words of memory out of 5000000
- 30836 multiletter control sequences out of 15000+600000
- 507938 words of font info for 124 fonts, out of 8000000 for 9000
+ 14098 strings out of 478994
+ 217247 string characters out of 5860203
+ 681378 words of memory out of 5000000
+ 31149 multiletter control sequences out of 15000+600000
+ 513457 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,8n,117p,532b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/tex
-dir/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dist
-/fonts/type1/urw/times/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on main.pdf (4 pages, 169768 bytes).
+ 86i,9n,117p,545b,1053s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/newtxtt/txttBec.enc}{/opt/tex
+live/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/texdir/texmf-d
+ist/fonts/type1/public/newtxtt/newtxtt.pfb></opt/texlive/texdir/texmf-dist/font
+s/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/ti
+mes/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utmr8a.pf
+b></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (4 pages, 259209 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
