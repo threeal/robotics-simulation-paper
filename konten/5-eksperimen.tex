@@ -5,20 +5,27 @@
 
 \begin{figure} [ht]
   \centering
-  \includegraphics[scale=0.25]{gambar/nodeujigerak.png}
-  \caption{Skema \emph{node} pengujian gerakan.}
-  \label{fig:nodeujigerak}
+  \includegraphics[scale=0.25]{gambar/nodeujigeraksimulasi.png}
+  \caption{Skema \emph{node} pengujian gerakan di simulasi.}
+  \label{fig:nodeujigeraksimulasi}
+\end{figure}
+
+\begin{figure} [ht]
+  \centering
+  \includegraphics[scale=0.3]{gambar/nodeujigerakfisik.png}
+  \caption{Skema \emph{node} pengujian gerakan pada robot fisik.}
+  \label{fig:nodeujigerakfisik}
 \end{figure}
 
 Pengujian gerakan dilakukan dengan menjalankan \emph{node} \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
-Seperti yang terlihat pada Gambar \ref{fig:nodeujigerak}, di simulasi, \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
-Sedangkan untuk pengujian pada robot fisik, peran dari \emph{node} \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
+Seperti yang terlihat pada Gambar \ref{fig:nodeujigeraksimulasi}, di simulasi, \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
+Sedangkan untuk pengujian di dunia nyata, seperti yang terlihat pada Gambar \ref{fig:nodeujigerakfisik}, peran dari \emph{node} \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
 
 \begin{table}
-  \caption{Hasil pengujian gerakan linier di simulasi selama 10 detik.}
+  \caption{Hasil uji gerakan linier di simulasi selama 10 detik.}
   \label{tab:hasilujiliniersimulasi}
   \centering
-  \begin{tabular}{rr|rr|rr}
+  \begin{tabular}{cc|cc|cc}
     \toprule
     \multicolumn{2}{c|}{Kecepatan} &
     \multicolumn{2}{|c|}{Posisi di Simulasi} &
@@ -38,10 +45,10 @@ Sedangkan untuk pengujian pada robot fisik, peran dari \emph{node} \lstinline{di
 \end{table}
 
 \begin{table}
-  \caption{Hasil pengujian gerakan sudut di simulasi selama 10 detik.}
+  \caption{Hasil uji gerakan sudut di simulasi selama 10 detik.}
   \label{tab:hasilujisudutsimulasi}
   \centering
-  \begin{tabular}{r|r|r}
+  \begin{tabular}{c|c|c}
     \toprule
     Kecepatan   & Orientasi di Simulasi & Orientasi Odometri \\
     \midrule
@@ -60,10 +67,10 @@ Seperti yang terlihat pada Tabel \ref{tab:hasilujiliniersimulasi} dan Tabel \ref
 Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{dienen_robot_navigation} adalah nilai yang sama dengan transformasi model robot di simulasi.
 
 \begin{table}
-  \caption{Hasil pengujian gerakan linier di dunia nyata selama 10 detik.}
+  \caption{Hasil uji gerakan linier pada robot fisik selama 10 detik.}
   \label{tab:hasilujilinierdunianyata}
   \centering
-  \begin{tabular}{rr|rr|rr}
+  \begin{tabular}{cc|cc|cc}
     \toprule
     \multicolumn{2}{c|}{Kecepatan} &
     \multicolumn{2}{|c|}{Posisi di Dunia Nyata} &
@@ -83,10 +90,10 @@ Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{diene
 \end{table}
 
 \begin{table}
-  \caption{Hasil pengujian gerakan sudut di dunia nyata selama 10 detik.}
+  \caption{Hasil uji gerakan sudut pada robot fisik selama 10 detik.}
   \label{tab:hasilujisudutdunianyata}
   \centering
-  \begin{tabular}{r|r|r}
+  \begin{tabular}{c|c|c}
     \toprule
     Kecepatan   & Orientasi di Dunia Nyata  & Orientasi Odometri \\
     \midrule
