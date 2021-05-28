@@ -6,13 +6,13 @@
 \begin{figure} [ht]
   \centering
   \includegraphics[scale=0.25]{gambar/nodeujigerak.png}
-  \caption{Skema node pengujian gerakan linier.}
+  \caption{Skema \emph{node} pengujian gerakan.}
   \label{fig:nodeujigerak}
 \end{figure}
 
-Pengujian gerakan dilakukan dengan menjalankan node \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
-Seperti yang terlihat pada Gambar \ref{fig:nodeujigerak}, di simulasi, node \lstinline{move_for} akan terhubung dengan node \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi melalui topic \lstinline{/navigation/maneuverinput}.
-Sedangkan untuk pengujian pada robot fisik, peran dari node \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh node \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
+Pengujian gerakan dilakukan dengan menjalankan \emph{node} \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
+Seperti yang terlihat pada Gambar \ref{fig:nodeujigerak}, di simulasi, \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
+Sedangkan untuk pengujian pada robot fisik, peran dari \emph{node} \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
 
 \begin{table}
   \caption{Hasil pengujian gerakan linier di simulasi selama 10 detik.}
@@ -38,8 +38,8 @@ Sedangkan untuk pengujian pada robot fisik, peran dari node \lstinline{dienen_ro
 \end{table}
 
 \begin{table}
-  \caption{Hasil pengujian gerakan angular di simulasi selama 10 detik.}
-  \label{tab:hasilujiangularsimulasi}
+  \caption{Hasil pengujian gerakan sudut di simulasi selama 10 detik.}
+  \label{tab:hasilujisudutsimulasi}
   \centering
   \begin{tabular}{r|r|r}
     \toprule
@@ -55,8 +55,8 @@ Sedangkan untuk pengujian pada robot fisik, peran dari node \lstinline{dienen_ro
   \end{tabular}
 \end{table}
 
-Pengujian gerakan terbagi menjadi dua bagian, pengujian gerakan linier dan pengujian gerakan angular, masing-masing diujikan selama 10 detik pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
-Seperti yang terlihat pada Tabel \ref{tab:hasilujiliniersimulasi} dan Tabel \ref{tab:hasilujiangularsimulasi}, posisi dan orientasi odometri yang diterima robot memiliki nilai yang sama dengan posisi dan orientasi model robot di simulasi.
+Pengujian gerakan terbagi menjadi dua bagian, pengujian gerakan linier dan pengujian gerakan sudut, masing-masing diujikan selama 10 detik pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
+Seperti yang terlihat pada Tabel \ref{tab:hasilujiliniersimulasi} dan Tabel \ref{tab:hasilujisudutsimulasi}, posisi dan orientasi odometri yang diterima robot memiliki nilai yang sama dengan posisi dan orientasi model robot di simulasi.
 Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{dienen_robot_navigation} adalah nilai yang sama dengan transformasi model robot di simulasi.
 
 \begin{table}
@@ -83,8 +83,8 @@ Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{diene
 \end{table}
 
 \begin{table}
-  \caption{Hasil pengujian gerakan angular di dunia nyata selama 10 detik.}
-  \label{tab:hasilujiangulardunianyata}
+  \caption{Hasil pengujian gerakan sudut di dunia nyata selama 10 detik.}
+  \label{tab:hasilujisudutdunianyata}
   \centering
   \begin{tabular}{r|r|r}
     \toprule
@@ -101,5 +101,5 @@ Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{diene
 \end{table}
 
 Berbeda dengan pengujian di lingkungan simulasi, pengujian di dunia nyata memiliki hasil yang berbeda antara pengukuran langsung dengan nilai odometri yang diterima oleh robot.
-Seperti yang terlihat pada Tabel \ref{tab:hasilujilinierdunianyata} dan Tabel \ref{tab:hasilujiangulardunianyata}, terdapat perbedaan antara keduanya yang disebabkan oleh ketidakakuratan yang ada pada sensor yang digunakan untuk mendapatkan nilai posisi dan orientasi.
-Walaupun begitu, terlepas dari adanya perbedaan tingkat akurasi, robot tergolong dapat melakukan perintah gerakan yang sesuai ketika diujikan di simulasi maupun dunia nyata ketika diujikan menggunakan \emph{node behavior} yang sama.
+Seperti yang terlihat pada Tabel \ref{tab:hasilujilinierdunianyata} dan Tabel \ref{tab:hasilujisudutdunianyata}, terdapat perbedaan antara keduanya yang disebabkan oleh ketidakakuratan yang ada pada sensor yang digunakan untuk mendapatkan nilai posisi dan orientasi.
+Walaupun begitu, terlepas dari adanya perbedaan tingkat akurasi, dengan menggunakan \emph{node behavior} yang sama, robot tergolong mampu melakukan perintah gerakan yang sesuai ketika diujikan di simulasi maupun di dunia nyata.
