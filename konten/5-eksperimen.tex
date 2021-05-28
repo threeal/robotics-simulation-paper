@@ -55,6 +55,51 @@ Sedangkan untuk pengujian pada robot fisik, peran dari node \lstinline{dienen_ro
   \end{tabular}
 \end{table}
 
-Pengujian gerakan terbagi menjadi dua bagian, pengujian gerakan linier dan pengujian gerakan angular, masing-masing diujikan pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
+Pengujian gerakan terbagi menjadi dua bagian, pengujian gerakan linier dan pengujian gerakan angular, masing-masing diujikan selama 10 detik pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
 Seperti yang terlihat pada Tabel \ref{tab:hasilujiliniersimulasi} dan Tabel \ref{tab:hasilujiangularsimulasi}, posisi dan orientasi odometri yang diterima robot memiliki nilai yang sama dengan posisi dan orientasi model robot di simulasi.
 Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{dienen_robot_navigation} adalah nilai yang sama dengan transformasi model robot di simulasi.
+
+\begin{table}
+  \caption{Hasil pengujian gerakan linier di dunia nyata selama 10 detik.}
+  \label{tab:hasilujilinierdunianyata}
+  \centering
+  \begin{tabular}{rr|rr|rr}
+    \toprule
+    \multicolumn{2}{c|}{Kecepatan} &
+    \multicolumn{2}{|c|}{Posisi di Dunia Nyata} &
+    \multicolumn{2}{|c}{Posisi Odometri} \\
+    \midrule
+    x (m/min) & y (m/min) & x (m) & y (m) & x(m)  & y(m) \\
+    \midrule
+    40        & 0         & 5.1   & -0.1  & 5.2   & 0.1 \\
+    60        & 0         & 8.1   & 0.1   & 7.9   & 0.0 \\
+    -40       & 0         & -5.3  & 0.1   & -5.2  & 0.1 \\
+    0         & 40        & 0.0   & 5.4   & 0.1   & 5.2 \\
+    0         & -40       & 0.2   & -5.1  & -0.1  & -5.5 \\
+    40        & 20        & 5.2   & 3.1   & 5.3   & 3.1 \\
+    -20       & 40        & -3.1  & 5.3   & -2.9  & 5.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{Hasil pengujian gerakan angular di dunia nyata selama 10 detik.}
+  \label{tab:hasilujiangulardunianyata}
+  \centering
+  \begin{tabular}{r|r|r}
+    \toprule
+    Kecepatan   & Orientasi di Dunia Nyata  & Orientasi Odometri \\
+    \midrule
+    z (rad/min) & z (deg)                   & z (deg) \\
+    \midrule
+    40          & 41.0                      & 39.6 \\
+    120         & 120.0                     & 119.3 \\
+    -40         & -40.0                     & -39.6 \\
+    -120        & -119.0                    & -116.2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Berbeda dengan pengujian di lingkungan simulasi, pengujian di dunia nyata memiliki hasil yang berbeda antara pengukuran langsung dengan nilai odometri yang diterima oleh robot.
+Seperti yang terlihat pada Tabel \ref{tab:hasilujilinierdunianyata} dan Tabel \ref{tab:hasilujiangulardunianyata}, terdapat perbedaan antara keduanya yang disebabkan oleh ketidakakuratan yang ada pada sensor yang digunakan untuk mendapatkan nilai posisi dan orientasi.
+Walaupun begitu, terlepas dari adanya perbedaan tingkat akurasi, robot tergolong dapat melakukan perintah gerakan yang sesuai ketika diujikan di simulasi maupun dunia nyata ketika diujikan menggunakan \emph{node behavior} yang sama.
