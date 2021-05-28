@@ -14,4 +14,47 @@ Pengujian gerakan dilakukan dengan menjalankan node \lstinline{move_for} sebagai
 Seperti yang terlihat pada Gambar \ref{fig:nodeujigerak}, di simulasi, node \lstinline{move_for} akan terhubung dengan node \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi melalui topic \lstinline{/navigation/maneuverinput}.
 Sedangkan untuk pengujian pada robot fisik, peran dari node \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh node \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
 
-\lipsum[1-5]
+\begin{table}
+  \caption{Hasil pengujian gerakan linier di simulasi selama 10 detik.}
+  \label{tab:hasilujiliniersimulasi}
+  \centering
+  \begin{tabular}{rr|rr|rr}
+    \toprule
+    \multicolumn{2}{c|}{Kecepatan} &
+    \multicolumn{2}{|c|}{Posisi di Simulasi} &
+    \multicolumn{2}{|c}{Posisi Odometri} \\
+    \midrule
+    x (m/min) & y (m/min) & x (m) & y (m) & x(m)  & y(m) \\
+    \midrule
+    40        & 0         & 5.2   & 0.0   & 5.2   & 0.0 \\
+    60        & 0         & 7.9   & 0.0   & 7.9   & 0.0 \\
+    -40       & 0         & -5.2  & 0.0   & -5.2  & 0.0 \\
+    0         & 40        & 0.0   & 5.4   & 0.0   & 5.4 \\
+    0         & -40       & 0.0   & -5.3  & 0.0   & -5.3 \\
+    40        & 20        & 5.0   & 3.0   & 5.0   & 3.0 \\
+    -20       & 40        & -2.9  & 5.5   & -2.9  & 5.5 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{Hasil pengujian gerakan angular di simulasi selama 10 detik.}
+  \label{tab:hasilujiangularsimulasi}
+  \centering
+  \begin{tabular}{r|r|r}
+    \toprule
+    Kecepatan   & Orientasi di Simulasi & Orientasi Odometri \\
+    \midrule
+    z (rad/min) & z (deg)               & z (deg) \\
+    \midrule
+    40          & 39.0                  & 39.0 \\
+    120         & 118.7                 & 118.7 \\
+    -40         & -39.2                 & -39.2 \\
+    -120        & -117.1                & -117.1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Pengujian gerakan terbagi menjadi dua bagian, pengujian gerakan linier dan pengujian gerakan angular, masing-masing diujikan pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
+Seperti yang terlihat pada Tabel \ref{tab:hasilujiliniersimulasi} dan Tabel \ref{tab:hasilujiangularsimulasi}, posisi dan orientasi odometri yang diterima robot memiliki nilai yang sama dengan posisi dan orientasi model robot di simulasi.
+Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{dienen_robot_navigation} adalah nilai yang sama dengan transformasi model robot di simulasi.
