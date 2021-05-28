@@ -1,24 +1,5 @@
 \section{ROS 2 dan Gazebo}
 \label{sec:rosgazebo}
 
-\subsection{Robot Operating System 2 (ROS 2)}
-\label{subsec:ros2}
-
-Robot Operating System (ROS) \citep{quigley2009} merupakan kumpulan dari \emph{libraries}, \emph{drivers}, dan \emph{tools} yang mempermudah pengembangan sistem pada robot.
-ROS memiliki \emph{command tool} seperti Linux, sistem komunikasi antar proses, dan berbagai macam \emph{packages} yang berhubungan dengan pengembangan sistem pada robot.
-Proses yang dieksekusi pada ROS disebut sebagai \emph{node}, komunikasi antar proses yang dimiliki menggunakan model \emph{publish/subscribe}, dan data komunikasi yang dikirimkan disebut sebagai \emph{topic}.
-Suatu proses \emph{publisher} mampu mengirimkan satu maupun lebih \emph{topic}, kemudian proses-proses lain yang melakukan \emph{subscribe} pada suatu \emph{topic} bisa memperoleh isi dari \emph{topic} tersebut.
-Selain itu ada juga \emph{sevice} yang memiliki fungsi seperti \emph{topic}, hanya saja dilakukan secara dua arah.
-\emph{Service} ini bekerja menggunakan model \emph{client/server} dimana \emph{service client} akan mengirimkan data permintaan dalam bentuk \emph{request} dan kemudian \emph{service server} akan mengirimkan data balasan dalam bentuk \emph{response}.
-
-Generasi kedua dari Robot Operating System, ROS 2, merupakan kelanjutan dari ROS yang mengusung reliabilitas dan performa untuk penggunaan \emph{real-time} sembari masih mendukung keunggulan yang dimiliki oleh ROS sebelumnya \citep{maruyama2016}.
-Untuk memenuhi kebutuhan reliabilitas dan performa untuk penggunaan real-time tersebut, ROS 2 menggunakan \emph{Data Distribution Service} (DDS) \citep{castellote2003} \citep{schlesselman2004}, standar industri untuk sistem komunikasi \emph{real-time} dan \emph{end-to-end middleware}, yang menggantikan sistem komunikasi antar proses yang dimiliki ROS sebelumnya.
-
-\subsection{Gazebo}
-\label{subsec:gazebo}
-
-Gazebo \citep{koenig2004} merupakan bagian dari Player Project \citep{gerkey2003} yang memungkinkan sebuah simulasi robot dan aplikasi sensor bekerja di lingkungan simulasi indoor maupun outdoor tiga dimensi.
-Gazebo memiliki arsitektur \emph{client/server} dan model \emph{publish/subscribe} untuk sistem komunikasi antar prosesnya.
-Setiap objek simulasi di Gazebo dapat diasosiasikan dalam satu maupun lebih kontroler yang akan memproses perintah untuk mengatur dan menentukan keadaan dari suatu objek.
-Data yang dihasilkan oleh suatu kontroler akan dikirim ke \emph{shared memory} menggunakan \emph{Gazebo interfaces} (\emph{ifaces}).
-Nantinya \emph{ifaces} dari proses-proses lain dapat membaca data tersebut pada \emph{shared memory}, sehingga memungkinkan komunikasi antar proses antara program yang mengontrol robot dan Gazebo, terlepas dari bahasa pemrograman yang digunakan.
+\input{konten/3-ros-gazebo/a-ros2.tex}
+\input{konten/3-ros-gazebo/b-gazebo.tex}
