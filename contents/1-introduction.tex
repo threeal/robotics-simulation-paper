@@ -1,18 +1,25 @@
-\section{Pendahuluan}
-\label{sec:pendahuluan}
+\section{introduction}
+\label{sec:introduction}
 
-Selama beberapa tahun terakhir, robot telah mengalami perkembangan yang signifikan dari robot beroda untuk edukasi \citep{goncalves2009} hingga robot \emph{manipulator} untuk skala industri \citep{Blatnicky2020}.
-Salah satu bentuk perkembangan lain dari robot tersebut adalah \emph{socially assistive robots} (SARs).
-SARs merupakan jenis robot dalam bidang \emph{socially assistive robotics} yang menggabungkan aspek yang ada pada \emph{assistive robotics} dan \emph{socially interactive robotics} sehingga menjadikan SARs sebagai robot yang mampu memberikan bantuan kepada pengguna dalam bentuk interaksi sosial \citep{seifer2005}.
+Over the past few years,
+  robots have undergone a significant development from mobile robots for education \citep{goncalves2009} to manipulator robots for industries \citep{Blatnicky2020}.
+One of that development is socially assistive robots (SARs).
+SARs are robots in the field of socially assistive robotics which combine aspects in assistive robotics and socially interactive robotics.
+Because of that aspects,
+  SARs could provide assistance to users in the form of social interaction \citep{seifer2005}.
 
-Namun, karena sifat dari SARs yang melibatkan interaksi langsung dengan pengguna, maka pengujian dari robot akan menjadi sulit dan beresiko bagi pengguna yang ikut terlibat dalam pengujian tersebut \citep{erickson2020}.
-Salah satu solusi untuk mengatasi masalah tersebut adalah dengan melakukan pengujian secara virtual melalui simulasi robot.
-Selain bisa meminimalisir resiko, penggunaan simulasi robot sebagai media pengujian robot juga bisa mengurangi biaya yang dibutuhkan dan menghemat waktu pengujian selama pengembangan robot tersebut \citep{takaya2016}.
+However, due to the nature of SARs that involve direct interaction with the user,
+  testing of the robot could be difficult and risky for the user involved in the test \citep{erickson2020}.
+One of the solutions to overcome this problem is to do virtual testing through robot simulation.
+In addition to minimizing risk,
+  the use of robot simulations as a medium for robot testing could also reduce the required costs and save testing time during the development of the robot \citep{takaya2016}.
 
-Hingga saat ini sudah ada beberapa simulator yang bisa digunakan untuk menjalankan simulasi robot seperti Webots \citep{michel2004}, Gazebo \citep{koenig2004}, V-REP \citep{rohmer2013}, OpenAI Gym \citep{brockman2016}, dan lain sebagainya.
-Namun, simulator-simulator tersebut hanyalah \emph{platform} yang secara umum digunakan untuk membantu pengembangan robot melalui simulasi virtual.
-Sedangkan pengembangan dari lingkungan simulasi dan kontroler robot untuk simulasi tersebut harus dibuat sendiri oleh pengembang robot.
+Until now, there are several simulators that could be used to run a robot simulation such as Webots \citep{michel2004}, Gazebo \citep{koenig2004}, V-REP \citep{rohmer2013}, OpenAI Gym \citep{brockman2016}, etc.
+However, these simulators are just platforms that are generally used to help robot development through a virtual simulation.
+While the development of the simulation environment and the robot controller for the simulation must be made by the robot developers themselves.
 
-Untuk itu, pada penelitian ini kami mengajukan penelitian terkait pengembangan lingkungan simulasi untuk pengujian SARs menggunakan ROS 2 dan Gazebo.
-ROS 2 dan Gazebo sendiri dipilih karena tersedianya banyak \emph{library} yang dapat membantu pengembangan maupun pengujian robot, terutama untuk simulasi.
-Selain itu, dengan adanya ROS 2, kontroler robot yang diuji melalui simulasi bisa dengan mudah dipindahkan ke robot fisik untuk diuji secara langsung pada pengguna \citep{takaya2016}.
+For that reason, in this study,
+  we propose research related to the development of a simulation environment for SARs testing using ROS 2 and Gazebo.
+ROS 2 and Gazebo were chosen because of the availability of many libraries that could help the development and tests of robots, especially for simulations.
+In addition, with the presence of the hardware abstraction scheme in ROS 2,
+  the robot controller which is tested through simulation could be transferred to a physical robot to be tested directly on the user \citep{takaya2016}.
