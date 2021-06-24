@@ -8,6 +8,7 @@
 \usepackage[zerostyle=b,scaled=.75]{newtxtt}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{import}
 
 \usepackage{listings}
 \lstset{
@@ -49,15 +50,15 @@
 
 \begin{document}
 
-  \input{deskripsi/judul.tex}
-  \input{deskripsi/abstrak.tex}
+  \subimport{deskripsi}{judul.tex}
+  \subimport{deskripsi}{abstrak.tex}
 
-  \input{konten/1-pendahuluan.tex}
-  \input{konten/2-penelitian-terkait.tex}
-  \input{konten/3-ros-gazebo.tex}
-  \input{konten/4-desain-sistem.tex}
-  \input{konten/5-hasil-pengujian.tex}
-  \input{konten/6-kesimpulan.tex}
+  \subimport{konten}{1-pendahuluan.tex}
+  \subimport{konten}{2-penelitian-terkait.tex}
+  \subimport{konten}{3-ros-gazebo.tex}
+  \subimport{konten}{4-desain-sistem.tex}
+  \subimport{konten}{5-hasil-pengujian.tex}
+  \subimport{konten}{6-kesimpulan.tex}
 
   \balance
 
