@@ -1,0 +1,25 @@
+\section{introduction}
+\label{sec:introduction}
+
+Over the past few years,
+  robots have undergone a significant development from mobile robots for education \citep{goncalves2009} to manipulator robots for industries \citep{Blatnicky2020}.
+One of that development is socially assistive robots (SARs).
+SARs are robots in the field of socially assistive robotics which combine aspects in assistive robotics and socially interactive robotics.
+Because of that aspects,
+  SARs could provide assistance to users in the form of social interaction \citep{seifer2005}.
+
+However, due to the nature of SARs that involve direct interaction with the user,
+  testing of the robot could be difficult and risky for the user involved in the test \citep{erickson2020}.
+One of the solutions to overcome this problem is to do virtual testing through robot simulation.
+In addition to minimizing risk,
+  the use of robot simulations as a medium for robot testing could also reduce the required costs and save testing time during the development of the robot \citep{takaya2016}.
+
+Until now, there are several simulators that could be used to run a robot simulation such as Webots \citep{michel2004}, Gazebo \citep{koenig2004}, V-REP \citep{rohmer2013}, OpenAI Gym \citep{brockman2016}, etc.
+However, these simulators are just platforms that are generally used to help robot development through a virtual simulation.
+While the development of the simulation environment and the robot controller for the simulation must be made by the robot developers themselves.
+
+For that reason, in this study,
+  we propose research related to the development of a simulation environment for SARs testing using ROS 2 and Gazebo.
+ROS 2 and Gazebo were chosen because of the availability of many libraries that could help the development and tests of robots, especially for simulations.
+In addition, with the presence of the hardware abstraction scheme in ROS 2,
+  the robot controller which is tested through simulation could be transferred to a physical robot to be tested directly on the user \citep{takaya2016}.

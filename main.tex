@@ -3,11 +3,12 @@
 \documentclass[conference]{IEEEtran}[2015/08/26]
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[indonesian]{babel}
+\usepackage[english]{babel}
 \usepackage{mwe}
 \usepackage[zerostyle=b,scaled=.75]{newtxtt}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{import}
 
 \usepackage{listings}
 \lstset{
@@ -44,24 +45,23 @@
 
 \usepackage{stfloats}
 
-\hyphenation{
-}
+\subimport{references}{hyphenation.tex}
 
 \begin{document}
 
-  \input{deskripsi/judul.tex}
-  \input{deskripsi/abstrak.tex}
+  \subimport{description}{title.tex}
+  \subimport{description}{abstract.tex}
 
-  \input{konten/1-pendahuluan.tex}
-  \input{konten/2-penelitian-terkait.tex}
-  \input{konten/3-ros-gazebo.tex}
-  \input{konten/4-desain-sistem.tex}
-  \input{konten/5-hasil-pengujian.tex}
-  \input{konten/6-kesimpulan.tex}
+  \subimport{contents}{1-introduction.tex}
+  \subimport{contents}{2-related-works.tex}
+  \subimport{contents}{3-ros-gazebo.tex}
+  \subimport{contents}{4-system-design.tex}
+  \subimport{contents}{5-experiments.tex}
+  \subimport{contents}{6-conclusion.tex}
 
   \balance
 
   \bibliographystyle{IEEEtranN}
-  \bibliography{pustaka/pustaka.bib}
+  \bibliography{references/bibliography.bib}
 
 \end{document}

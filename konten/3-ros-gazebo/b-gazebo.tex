@@ -1,8 +1,0 @@
-\subsection{Gazebo}
-\label{subsec:gazebo}
-
-Gazebo \citep{koenig2004} merupakan bagian dari Player Project \citep{gerkey2003} yang memungkinkan sebuah simulasi robot dan aplikasi sensor bekerja di lingkungan simulasi indoor maupun outdoor tiga dimensi.
-Gazebo memiliki arsitektur \emph{client/server} dan model \emph{publish/subscribe} untuk sistem komunikasi antar prosesnya.
-Setiap objek simulasi di Gazebo dapat diasosiasikan dalam satu maupun lebih kontroler yang akan memproses perintah untuk mengatur dan menentukan keadaan dari suatu objek.
-Data yang dihasilkan oleh suatu kontroler akan dikirim ke \emph{shared memory} menggunakan \emph{Gazebo interfaces} (\emph{ifaces}).
-Nantinya \emph{ifaces} dari proses-proses lain dapat membaca data tersebut pada \emph{shared memory}, sehingga memungkinkan komunikasi antar proses antara program yang mengontrol robot dan Gazebo, terlepas dari bahasa pemrograman yang digunakan.

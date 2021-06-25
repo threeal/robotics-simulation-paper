@@ -1,0 +1,24 @@
+
+\subsection{Robot Operating System 2 (ROS 2)}
+\label{subsec:ros2}
+
+Robot Operating System (ROS) \citep{quigley2009} is a collection of libraries, drivers,
+  and tools that facilitate system development on robots.
+ROS has Linux like command tools,
+  interprocess communication systems, and various packages related to system development on robots.
+
+Processes that are executed on ROS are referred to as nodes,
+  communication between each processes uses the publish/subscribe model,
+  and the communication data sent between processes is referred to as a topic.
+A publisher process can submit one or more topics,
+  then other processes that subscribe to that topic could get the contents of that topic.
+In addition, there is also a service that has a function like a topic,
+  but it's done in two-ways direction.
+This service works by using a client/server model where a service client could send request data in the form of a service request and then a service server will send reply data in the form of a service response.
+
+The second generation of Robot Operating System, ROS 2,
+  is a continuation of ROS that brings reliability and performance for real-time use while still supporting the advantages of the previous ROS \citep{maruyama2016}.
+To meet the reliability and performance requirements for real-time use,
+  ROS 2 uses Data Distribution Service (DDS) \citep{castellote2003} \citep{schlesselman2004},
+  the industry standard for real-time communication systems and end-to-end middleware,
+  which replaces the previous ROS's interprocess communication system.
