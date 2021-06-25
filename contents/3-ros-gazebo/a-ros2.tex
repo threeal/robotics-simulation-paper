@@ -2,12 +2,23 @@
 \subsection{Robot Operating System 2 (ROS 2)}
 \label{subsec:ros2}
 
-Robot Operating System (ROS) \citep{quigley2009} merupakan kumpulan dari \emph{libraries}, \emph{drivers}, dan \emph{tools} yang mempermudah pengembangan sistem pada robot.
-ROS memiliki \emph{command tool} seperti Linux, sistem komunikasi antar proses, dan berbagai macam \emph{packages} yang berhubungan dengan pengembangan sistem pada robot.
-Proses yang dieksekusi pada ROS disebut sebagai \emph{node}, komunikasi antar proses yang dimiliki menggunakan model \emph{publish/subscribe}, dan data komunikasi yang dikirimkan disebut sebagai \emph{topic}.
-Suatu proses \emph{publisher} mampu mengirimkan satu maupun lebih \emph{topic}, kemudian proses-proses lain yang melakukan \emph{subscribe} pada suatu \emph{topic} bisa memperoleh isi dari \emph{topic} tersebut.
-Selain itu ada juga \emph{sevice} yang memiliki fungsi seperti \emph{topic}, hanya saja dilakukan secara dua arah.
-\emph{Service} ini bekerja menggunakan model \emph{client/server} dimana \emph{service client} akan mengirimkan data permintaan dalam bentuk \emph{request} dan kemudian \emph{service server} akan mengirimkan data balasan dalam bentuk \emph{response}.
+Robot Operating System (ROS) \citep{quigley2009} is a collection of libraries, drivers,
+  and tools that facilitate system development on robots.
+ROS has Linux like command tools,
+  interprocess communication systems, and various packages related to system development on robots.
 
-Generasi kedua dari Robot Operating System, ROS 2, merupakan kelanjutan dari ROS yang mengusung reliabilitas dan performa untuk penggunaan \emph{real-time} sembari masih mendukung keunggulan yang dimiliki oleh ROS sebelumnya \citep{maruyama2016}.
-Untuk memenuhi kebutuhan reliabilitas dan performa untuk penggunaan real-time tersebut, ROS 2 menggunakan \emph{Data Distribution Service} (DDS) \citep{castellote2003} \citep{schlesselman2004}, standar industri untuk sistem komunikasi \emph{real-time} dan \emph{end-to-end middleware}, yang menggantikan sistem komunikasi antar proses yang dimiliki ROS sebelumnya.
+Processes that are executed on ROS are referred to as nodes,
+  communication between each processes uses the publish/subscribe model,
+  and the communication data sent between processes is referred to as a topic.
+A publisher process can submit one or more topics,
+  then other processes that subscribe to that topic could get the contents of that topic.
+In addition, there is also a service that has a function like a topic,
+  but it's done in two-ways direction.
+This service works by using a client/server model where a service client could send request data in the form of a service request and then a service server will send reply data in the form of a service response.
+
+The second generation of Robot Operating System, ROS 2,
+  is a continuation of ROS that brings reliability and performance for real-time use while still supporting the advantages of the previous ROS \citep{maruyama2016}.
+To meet the reliability and performance requirements for real-time use,
+  ROS 2 uses Data Distribution Service (DDS) \citep{castellote2003} \citep{schlesselman2004},
+  the industry standard for real-time communication systems and end-to-end middleware,
+  which replaces the previous ROS's interprocess communication system.
