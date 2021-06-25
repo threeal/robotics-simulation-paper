@@ -1,27 +1,31 @@
-\subsection{Desain Kontroler Robot}
-\label{subsec:desainkontroler}
+\subsection{Robot Controller Design}
+\label{subsec:controllerdesign}
 
 \begin{figure} [ht]
   \centering
-  \includegraphics[scale=0.45]{images/simulation-controller.png}
-  \caption{Diagram sistem kontroler robot di simulasi.}
-  \label{fig:kontrolersimulasi}
+  \includegraphics[width=0.5\textwidth]{images/simulation-controller.png}
+  \caption{Diagram of the robot controller system in the simulation.}
+  \label{fig:simulationcontroller}
 \end{figure}
 
-Kontroler robot yang digunakan untuk simulasi ini akan dikembangkan menggunakan ROS 2.
-Kontroler tersebut akan dipisah menjadi beberapa bagian dalam bentuk \emph{ROS 2 node} seperti yang terlihat pada Gambar \ref{fig:kontrolersimulasi}.
-Setiap \emph{node} yang ada akan terhubung satu sama lain menggunakan sistem komunikasi antar proses ROS 2 yang berupa \emph{topics} dan \emph{services}.
+The robot controller used for this simulation will be developed using ROS 2.
+The controller will be separated into several parts in the form of ROS 2 nodes as shown in Figure \ref{fig:simulationcontroller}.
+Each existing node will be connected to each other using the ROS 2's interprocess communication system in the form of topics and services.
 
-Bagian utama dari kontroler robot tersebut adalah \emph{node behavior} yang berisi program yang mengatur segala tindakan robot berdasarkan data yang didapat dari sensor yang ada di simulasi.
-Kemudian \emph{node behavior} tersebut akan terhubung dengan empat \emph{node} lain yang merepresentasikan sensor dan aktuator yang ada pada robot.
-Keempat \emph{node} tersebut akan terpasang di dalam cakupan simulator Gazebo sebagai \emph{Gazebo plugins}, sehingga mampu digunakan untuk mengakses dan memanipulasi data yang ada di simulasi menggunakan sistem \emph{shared memory} pada Gazebo \citep{gazeboplugins}.
+The main part of the robot controller is the behavior node which contains a program that regulates all robot actions based on data obtained from the sensors in the simulation.
+Then the behavior node will be connected to four other nodes that represent the sensors and actuators in the robot.
+Those four nodes will be attached in the scope of the Gazebo simulator as Gazebo plugins,
+  so that they can be used to access and manipulate data in the simulation using the shared memory system in the Gazebo \citep{gazeboplugins}.
 
 \begin{figure} [ht] \centering
-  \includegraphics[scale=0.45]{images/real-robot-controller.png}
-  \caption{Diagram sistem kontroler robot untuk robot fisik.}
-  \label{fig:kontrolerfisik}
+  \includegraphics[width=0.5\textwidth]{images/real-robot-controller.png}
+  \caption{Diagram of the real robot controller system.}
+  \label{fig:realrobotcontroller}
 \end{figure}
 
-Sistem ini dirancang secara terpisah agar \emph{node behavior} yang diujikan di lingkungan simulasi bisa langsung bekerja pada robot fisik.
-Seperti yang terlihat pada Gambar \ref{fig:kontrolerfisik}, transfer kontroler ke robot fisik dapat dilakukan dengan mengubah keseluruhan cakupan yang ada di simulator Gazebo, yang berupa empat \emph{node} yang telah disebutkan sebelumnya, menjadi \emph{node} yang memproses sensor dan aktuator yang ada pada robot fisik.
-Dengan ini pengujian yang dilakukan di simulasi bisa langsung diterapkan ketika diujikan pada robot fisik karena tidak perlunya pembuatan ulang kontroler yang menyesuaikan sistem yang ada pada robot.
+This system is designed separately so that the behavior nodes tested in the simulation environment could be used directly on the real robot.
+As shown in Figure \ref{fig:realrobotcontroller},
+  the transfer of controllers to the real robot can be done by changing the entire scope of the Gazebo simulator,
+  which consists of the four nodes mentioned earlier,
+  into nodes that process sensors and actuators on the real robot.
+With this, the tests carried out in the simulation can be directly applied when tested on the real robot because there is no need to redevelop the controller that adapts to the existing system on the real robot.
