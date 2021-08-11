@@ -11,7 +11,7 @@ jobs:
       - name: Compile document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: paper.tex
       - name: Disable Ignore
         run: rm .gitignore
         shell: bash

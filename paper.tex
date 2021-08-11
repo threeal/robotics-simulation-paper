@@ -45,23 +45,15 @@
 
 \usepackage{stfloats}
 
-\subimport{references}{hyphenation.tex}
+\input{hyphenation.tex}
 
 \begin{document}
 
-  \subimport{description}{title.tex}
-  \subimport{description}{abstract.tex}
-
-  \subimport{contents}{1-introduction.tex}
-  \subimport{contents}{2-related-works.tex}
-  \subimport{contents}{3-ros-gazebo.tex}
-  \subimport{contents}{4-system-design.tex}
-  \subimport{contents}{5-experiments.tex}
-  \subimport{contents}{6-conclusion.tex}
+  \input{document.tex}
 
   \balance
 
   \bibliographystyle{IEEEtranN}
-  \bibliography{references/bibliography.bib}
+  \bibliography{bibliography.bib}
 
 \end{document}
