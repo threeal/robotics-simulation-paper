@@ -1,12 +1,7 @@
 \subsection{Robot Controller Design}
 \label{subsec:controllerdesign}
 
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/simulation-controller.png}
-  \caption{Diagram of the robot controller system in the simulation.}
-  \label{fig:simulationcontroller}
-\end{figure}
+\input{figures/simulation-controller.tex}
 
 The robot controller used for this simulation will be developed using ROS 2.
 The controller will be separated into several parts in the form of ROS 2 nodes as shown in Figure \ref{fig:simulationcontroller}.
@@ -17,11 +12,7 @@ Then the behavior node will be connected to four other nodes that represent the 
 Those four nodes will be attached in the scope of the Gazebo simulator as Gazebo plugins,
   so that they can be used to access and manipulate data in the simulation using the shared memory system in the Gazebo \citep{gazeboplugins}.
 
-\begin{figure} [ht] \centering
-  \includegraphics[width=0.45\textwidth]{images/real-robot-controller.png}
-  \caption{Diagram of the real robot controller system.}
-  \label{fig:realrobotcontroller}
-\end{figure}
+\input{figures/real-robot-controller.tex}
 
 This system is designed separately so that the behavior nodes tested in the simulation environment could be used directly on the real robot.
 As shown in Figure \ref{fig:realrobotcontroller},

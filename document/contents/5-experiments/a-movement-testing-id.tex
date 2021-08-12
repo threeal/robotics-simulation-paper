@@ -1,19 +1,8 @@
 \subsection{Pengujian Gerakan}
 \label{subsec:movementtesting}
 
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/rosgraph-simulation-movement-test.png}
-  \caption{Skema \emph{node} pengujian gerakan di simulasi.}
-  \label{fig:rosgraphsimulationmovementtest}
-\end{figure}
-
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/rosgraph-real-robot-movement-test.png}
-  \caption{Skema \emph{node} pengujian gerakan pada robot fisik.}
-  \label{fig:rosgraphrealrobotmovementtest}
-\end{figure}
+\input{figures/rosgraph/simulation-movement-test.tex}
+\input{figures/rosgraph/real-robot-movement-test.tex}
 
 Pengujian gerakan dilakukan dengan menjalankan \emph{node} \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
 Seperti yang terlihat pada Gambar \ref{fig:rosgraphsimulationmovementtest},

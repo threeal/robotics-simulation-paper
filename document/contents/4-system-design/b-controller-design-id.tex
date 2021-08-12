@@ -1,12 +1,7 @@
 \subsection{Desain Kontroler Robot}
 \label{subsec:controllerdesign}
 
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/simulation-controller.png}
-  \caption{Diagram sistem kontroler robot di simulasi.}
-  \label{fig:simulationcontroller}
-\end{figure}
+\input{figures/simulation-controller.tex}
 
 Kontroler robot yang digunakan untuk simulasi ini akan dikembangkan menggunakan ROS 2.
 Kontroler tersebut akan dipisah menjadi beberapa bagian dalam bentuk \emph{ROS 2 node} seperti yang terlihat pada Gambar \ref{fig:simulationcontroller}.
@@ -17,11 +12,7 @@ Kemudian \emph{node behavior} tersebut akan terhubung dengan empat \emph{node} l
 Keempat \emph{node} tersebut akan terpasang di dalam cakupan simulator Gazebo sebagai \emph{Gazebo plugins},
   sehingga mampu digunakan untuk mengakses dan memanipulasi data yang ada di simulasi menggunakan sistem \emph{shared memory} pada Gazebo \citep{gazeboplugins}.
 
-\begin{figure} [ht] \centering
-  \includegraphics[width=0.45\textwidth]{images/real-robot-controller.png}
-  \caption{Diagram sistem kontroler robot untuk robot fisik.}
-  \label{fig:realrobotcontroller}
-\end{figure}
+\input{figures/real-robot-controller.tex}
 
 Sistem ini dirancang secara terpisah agar \emph{node behavior} yang diujikan di lingkungan simulasi bisa langsung bekerja pada robot fisik.
 Seperti yang terlihat pada Gambar \ref{fig:realrobotcontroller},

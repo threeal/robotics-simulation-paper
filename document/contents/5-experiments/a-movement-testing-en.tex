@@ -1,19 +1,8 @@
 \subsection{Movement Testing}
 \label{subsec:movementtesting}
 
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/rosgraph-simulation-movement-test.png}
-  \caption{Node scheme of the movement testing in the simulation.}
-  \label{fig:rosgraphsimulationmovementtest}
-\end{figure}
-
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/rosgraph-real-robot-movement-test.png}
-  \caption{Node scheme of the movement testing on the real robot.}
-  \label{fig:rosgraphrealrobotmovementtest}
-\end{figure}
+\input{figures/rosgraph/simulation-movement-test.tex}
+\input{figures/rosgraph/real-robot-movement-test.tex}
 
 Movement testing is done by running the \lstinline{move_for} node as a behavior node that will instruct the robot to move at a certain speed for a certain period of time.
 As shown in Figure \ref{fig:rosgraphsimulationmovementtest},
