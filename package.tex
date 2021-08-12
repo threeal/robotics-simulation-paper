@@ -1,0 +1,39 @@
+\usepackage{balance}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{iflang}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{mwe}
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\usepackage[zerostyle=b,scaled=.75]{newtxtt}
+\usepackage{stfloats}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{upquote}
+\usepackage{import}
+
+\usepackage[all]{hypcap}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fixed,
+  basewidth=.5em,
+  xleftmargin=0.5cm,
+  captionpos=b
+}
+
+\renewcommand{\bibfont}{\normalfont\footnotesize}
+
+\makeatletter
+\patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
+\makeatother
+
+\hypersetup{hidelinks,
+  colorlinks=true,
+  allcolors=black,
+  pdfstartview=Fit,
+  breaklinks=true
+}

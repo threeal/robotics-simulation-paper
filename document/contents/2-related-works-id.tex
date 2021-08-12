@@ -1,0 +1,18 @@
+\section{Penelitian Terkait}
+\label{sec:relatedworks}
+
+Beberapa penelitian sebelumnya telah berhasil dalam mengembangkan lingkungan simulasi untuk robot menggunakan ROS (Pendahulu ROS 2) dan Gazebo.
+Seperti yang dilakukan \citet{qian2014} yang mengembangkan simulasi untuk robot \emph{manipulator},
+  \citet{zhang2015} yang mengembangkan simulasi untuk robot \emph{quadrotor UAV},
+  dan \citet{takaya2016} yang mengembangkan lingkungan simulasi untuk pengujian terhadap \emph{mobile robot}.
+Namun, berbeda dengan penelitian yang telah dilakukan sebelumnya,
+  penelitian yang akan kami lakukan memilih menggunakan ROS 2 agar kontroler robot yang dibuat untuk simulasi memiliki performa yang lebih baik serta dapat bekerja secara \emph{real-time} \citep{maruyama2016}.
+
+Selain itu,
+  penelitian lain juga telah dilakukan oleh \citet{erickson2020} yang mengembangkan Assistive Gym,
+  sebuah \emph{framework} simulasi untuk \emph{assistive robotics} berbasis OpenAI Gym.
+\emph{Framework} simulasi tersebut kemudian digunakan oleh \citet{clegg2020} untuk mengembangkan metode \emph{learning} melalui simulasi pada kolaborasi antara robot dengan manusia dalam membantu pemakaian baju pada manusia.
+Namun, karena tidak menggunakan ROS,
+  kontroler robot yang dibuat untuk simulasi yang menggunakan \emph{framework} tersebut perlu dibuat ulang ketika akan diujikan secara langsung pada pengguna menggunakan robot fisik.
+Walaupun begitu, penelitian yang dilakukan oleh \citet{zamora2016} menunjukkan bahwa simulasi yang ada pada OpenAI Gym juga bisa diintegrasikan pada ROS dan Gazebo,
+  sehingga tidak menutup kemungkinan bahwa Assistive Gym juga bisa digunakan bersamaan dengan ROS 2 dan Gazebo.
