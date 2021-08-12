@@ -1,50 +1,9 @@
 \RequirePackage{cmap}
 
 \documentclass[conference]{IEEEtran}[2015/08/26]
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{mwe}
-\usepackage[zerostyle=b,scaled=.75]{newtxtt}
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{import}
 
-\usepackage{listings}
-\lstset{
-  basicstyle=\ttfamily,
-  columns=fixed,
-  basewidth=.5em,
-  xleftmargin=0.5cm,
-  captionpos=b
-}
-
-\usepackage{upquote}
-\usepackage{balance}
-\usepackage[square,comma,numbers,sort&compress]{natbib}
-
-\renewcommand{\bibfont}{\normalfont\footnotesize}
-
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\NAT@test}{\else \NAT@nm}{\else \NAT@hyper@{\NAT@nm}}{}{}
-\makeatother
-
-\usepackage{hyperref}
-
-\hypersetup{hidelinks,
-  colorlinks=true,
-  allcolors=black,
-  pdfstartview=Fit,
-  breaklinks=true
-}
-
-\usepackage[all]{hypcap}
-
-\usepackage[caption=false,font=footnotesize]{subfig}
-
-\usepackage{stfloats}
-
+\input{package.tex}
 \input{hyphenation.tex}
 
 \begin{document}
