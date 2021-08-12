@@ -1,3 +1,9 @@
 \subimport{document}{title.tex}
-\subimport{document}{\IfLanguageName{english}{abstract-en.tex}{abstract-id.tex}}
+
+\IfLanguageName{english}{
+  \subimport{document}{abstract-en.tex}
+}{
+  \subimport{document}{abstract-id.tex}
+}
+
 \subimport{document}{contents.tex}

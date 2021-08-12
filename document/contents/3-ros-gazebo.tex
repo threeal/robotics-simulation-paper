@@ -4,7 +4,13 @@
   }{
     ROS 2 dan Gazebo
   }}
+
 \label{sec:rosgazebo}
 
-\subimport{3-ros-gazebo}{\IfLanguageName{english}{a-ros2-en.tex}{a-ros2-id.tex}}
-\subimport{3-ros-gazebo}{\IfLanguageName{english}{b-gazebo-en.tex}{b-gazebo-id.tex}}
+\IfLanguageName{english}{
+  \subimport{3-ros-gazebo}{a-ros2-en.tex}
+  \subimport{3-ros-gazebo}{b-gazebo-en.tex}
+}{
+  \subimport{3-ros-gazebo}{a-ros2-id.tex}
+  \subimport{3-ros-gazebo}{b-gazebo-id.tex}
+}
