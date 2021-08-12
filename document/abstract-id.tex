@@ -1,0 +1,27 @@
+\begin{abstract}
+
+  Selama beberapa tahun terakhir,
+    robot telah mengalami perkembangan yang cukup signifikan.
+  Salah satu bentuk perkembangan tersebut adalah \emph{socially assistive robots} (SARs) yang mampu memberikan bantuan kepada pengguna dalam bentuk interaksi sosial.
+  Namun,
+    karena sifatnya yang melibatkan interaksi langsung dengan pengguna,
+    pengujian pada SARs akan menjadi sulit dan beresiko.
+  Untuk itu,
+    pada penelitian ini kami mengajukan lingkungan simulasi untuk pengujian SARs yang dibuat menggunakan simulator Gazebo.
+  Di dalam lingkungan simulasi ini,
+    model robot akan diujikan dengan model pengguna serta model-model objek lain secara virtual.
+  Agar pengujian yang dilakukan di simulasi bisa diterapkan pada \emph{real robot},
+    sistem kontroler yang ada pada robot akan dibuat secara terabstraksi dengan memisah setiap komponen menjadi \emph{nodes} menggunakan ROS 2.
+  Hasilnya,
+    model pengguna dan ruangan virtual di simulasi mampu digunakan dalam percobaan deteksi pose dan percobaan SLAM.
+  Sistem yang dibuat tersebut mampu menghasilkan tindakan yang sama dalam menggerakkan model robot dan \emph{real robot} dengan perbedaan \emph{error} sebesar 2.6\% di simulasi dan 12.5\% di dunia nyata.
+  Lebih lanjut, Dengan performa yang dimiliki ROS 2,
+    pengiriman citra dengan resolusi hingga 640 x 480 mampu menghasilkan \emph{delay} di bawah 50 ms dan frekuensi di atas 90\% pada sesama perangkat maupun antar-perangkat baik di simulasi maupu di dunia nyata.
+
+\end{abstract}
+
+\renewcommand\IEEEkeywordsname{Kata kunci}
+
+\begin{IEEEkeywords}
+  Simulasi, \emph{Assistive Robotics}, ROS2, Gazebo.
+\end{IEEEkeywords}
