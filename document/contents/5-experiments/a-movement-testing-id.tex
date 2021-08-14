@@ -1,14 +1,14 @@
 \subsection{Pengujian Gerakan}
 \label{subsec:movementtesting}
 
-\input{figures/rosgraph/simulation-movement-test.tex}
-\input{figures/rosgraph/real-robot-movement-test.tex}
+\input{figures/rosgraph/movement-sim.tex}
+\input{figures/rosgraph/movement-real.tex}
 
 Pengujian gerakan dilakukan dengan menjalankan \emph{node} \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
-Seperti yang terlihat pada Gambar \ref{fig:rosgraphsimulationmovementtest},
+Seperti yang terlihat pada Gambar \ref{fig:rosgraphmovementsim},
   di simulasi,
   \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
-Sedangkan untuk pengujian di dunia nyata, seperti yang terlihat pada Gambar \ref{fig:rosgraphrealrobotmovementtest},
+Sedangkan untuk pengujian di dunia nyata, seperti yang terlihat pada Gambar \ref{fig:rosgraphmovementreal},
   peran dari \emph{node} \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
 
 \input{graphs/linear-movement-sim.tex}
