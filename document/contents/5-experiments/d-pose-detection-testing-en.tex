@@ -1,0 +1,19 @@
+\subsection{Pose Detection Testing}
+\label{subsec:posedetectiontesting}
+
+\input{figures/rosgraph/pose-detection.tex}
+
+Pose detection testing is done in the simulation with purpose to test the user model ability in simulating the real user.
+In this test,
+  \lstinline{pose_detector} node will be run to do a computer vision process in detecting user's pose.
+As shown in the figure \ref{fig:rosgraphposedetection},
+  \lstinline{pose_detector} node will be connected to the \lstinline{camera_plugin} node that will send user image data which will then be processed by the \lstinline{pose detector} node to produce the detected pose.
+
+\input{figures/pose-detection.tex}
+
+The result,
+  as shown in the figure \ref{fig:posedetection},
+  from the received image,
+  \lstinline{pose_detector} node will detect the user's pose and display the result as lines and dots on the received image.
+Besides that,
+  the pose detection process could also display the corresponded result when the user's posture is changed from standing to sitting as in the result of figure \ref{fig:posedetection}.
