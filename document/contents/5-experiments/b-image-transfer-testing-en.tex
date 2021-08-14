@@ -1,0 +1,38 @@
+\subsection{Image Transfer Testing}
+\label{subsec:imagetransfertesting}
+
+\input{figures/rosgraph/image-transfer-sim.tex}
+\input{figures/rosgraph/image-transfer-real.tex}
+
+Image Transfer Testing is done by running the \lstinline{image_viewer} node that will display the received image in the form of GUI.
+As shown in figure \ref{fig:rosgraphimagetransfersim},
+  in the simulation,
+  the \lstinline{image_viewer} node will be connected to the \lstinline{camera_plugin} node that will send image data using the \lstinline{/camera/image_raw} topic.
+As for the testing in the real world,
+  as shown in figure \ref{fig:rosgraphimagetransferreal},
+  the role of the \lstinline{camera_plugin} node will be replaced by the \lstinline{v4l2_camera} node that will send image data which came from camera device on the real robot.
+
+\input{graphs/image-transfer-delay-sim.tex}
+\input{graphs/image-transfer-rate-sim.tex}
+
+The image transfer test is carried out under conditions of transmission on the same device and on transmission between two different devices.
+Each of these tests is carried out with combinations of resolution values from 160x120 to 1920x1080 on a virtual robot in a simulation environment and on a real robot in the real world.
+As shown in figure \ref{fig:imagetransferdelaysim} and figure \ref{fig:imagetransferratesim},
+  in the simulation,
+  the resulting delay values tends to increase while the resulting rate values tends to decrease with the increase of the sent data.
+From these results,
+  Up to 800x600 resolution ($\pm2500$ KB),
+  image transfer in the simulation could produce low delays under 50 ms and stable rates above 90\% of the normal value.
+
+\input{graphs/image-transfer-delay-real.tex}
+\input{graphs/image-transfer-rate-real.tex}
+
+Meanwhile,
+  on the real robot,
+  as shown in figure \ref{fig:imagetransferdelayreal} and figure \ref{fig:imagetransferratereal},
+  the obtained results are also relatively the same in which the delay values tends to increase while the rate values tends to decrease.
+However,
+  different from the test results in the simulation environment,
+  from the results on the real robot,
+  it is obtained that up to 640x480 resolution ($\pm1500$ KB),
+  image transfer on the real robot could produce low delays under 50 ms and stable rates above 90\% of the normal value.

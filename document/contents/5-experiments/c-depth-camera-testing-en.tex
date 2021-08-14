@@ -1,0 +1,35 @@
+\subsection{Depth Camera Testing}
+\label{subsec:depthcameratesting}
+
+\input{figures/rosgraph/depth-camera-sim.tex}
+\input{figures/rosgraph/depth-camera-real.tex}
+
+Depth camera testing is done to test the ability of depth camera in the simulation to simulate the depth camera device,
+  while at the same time to test the hardware abstraction in the ROS 2.
+This test is done by running two \lstinline{image_viewer} nodes that each of which will receive color images and depth images.
+As shown in figure \ref{fig:rosgraphdepthcamerasim},
+  in the simulation,
+  each \lstinline{image_viewer} nodes will receive color image data using the \lstinline{/depth_camera/image_raw} topic and depth image data using the \lstinline{/depth_camera/depth/image_raw} topic.
+As for the testing in the real world,
+  as shown in figure \ref{fig:rosgraphdepthcamerareal},
+  the role of the \lstinline{depth_camera_plugin} node will be replaced by \lstinline{v4l2_camera} node that will send data which came from the Kinect V2 device on the real robot.
+
+\input{figures/depth-camera/sim.tex}
+
+The result,
+  as shown in figure \ref{fig:depthcameraresultsim},
+  \lstinline{image_viewer} node will display the data received from the simulation in which the left image shows a colored image,
+  while the left image shows a depth image with black and white display.
+In the depth image,
+  the brighter a point in the image indicates a position that is far from the center point of the camera.
+
+\input{figures/depth-camera/real.tex}
+
+Meanwhile,
+  on the real robot the obtained results are also relatively the same.
+As shown in figure \ref{fig:depthcameraresultreal},
+  the left image indicates a colored image and the right image indicates a depth image.
+However,
+  in those images,
+  the depth image has a brighter result,
+  this happens because the range of the Kinect V2 is shorter (4.5 meter) than the range that was set on the depth camera in the simulation.

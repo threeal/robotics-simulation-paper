@@ -1,120 +1,38 @@
 \subsection{Pengujian Gerakan}
 \label{subsec:movementtesting}
 
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/rosgraph-simulation-movement-test.png}
-  \caption{Skema \emph{node} pengujian gerakan di simulasi.}
-  \label{fig:rosgraphsimulationmovementtest}
-\end{figure}
-
-\begin{figure} [ht]
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/rosgraph-real-robot-movement-test.png}
-  \caption{Skema \emph{node} pengujian gerakan pada robot fisik.}
-  \label{fig:rosgraphrealrobotmovementtest}
-\end{figure}
+\input{figures/rosgraph/movement-sim.tex}
+\input{figures/rosgraph/movement-real.tex}
 
 Pengujian gerakan dilakukan dengan menjalankan \emph{node} \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
-Seperti yang terlihat pada Gambar \ref{fig:rosgraphsimulationmovementtest},
+Seperti yang terlihat pada gambar \ref{fig:rosgraphmovementsim},
   di simulasi,
-  \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{dienen_robot_navigation} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
-Sedangkan untuk pengujian di dunia nyata, seperti yang terlihat pada Gambar \ref{fig:rosgraphrealrobotmovementtest},
-  peran dari \emph{node} \lstinline{dienen_robot_navigation} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
+  \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{navigation_plugin} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
+Sedangkan untuk pengujian di dunia nyata,
+  seperti yang terlihat pada gambar \ref{fig:rosgraphmovementreal},
+  peran dari \emph{node} \lstinline{navigation_plugin} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
 
-\begin{table}
-  \caption{Hasil uji gerakan linier di simulasi selama 10 detik.}
-  \label{tab:simulationlineartestresults}
-  \centering
-  \begin{tabular}{cc|cc|cc}
-    \toprule
-    \multicolumn{2}{c|}{Kecepatan} &
-    \multicolumn{2}{|c|}{Posisi di Simulasi} &
-    \multicolumn{2}{|c}{Posisi Odometri} \\
-    \midrule
-    x (m/min) & y (m/min) & x (m) & y (m) & x(m)  & y(m) \\
-    \midrule
-    40        & 0         & 5.2   & 0.0   & 5.2   & 0.0 \\
-    60        & 0         & 7.9   & 0.0   & 7.9   & 0.0 \\
-    -40       & 0         & -5.2  & 0.0   & -5.2  & 0.0 \\
-    0         & 40        & 0.0   & 5.4   & 0.0   & 5.4 \\
-    0         & -40       & 0.0   & -5.3  & 0.0   & -5.3 \\
-    40        & 20        & 5.0   & 3.0   & 5.0   & 3.0 \\
-    -20       & 40        & -2.9  & 5.5   & -2.9  & 5.5 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{table}
-  \caption{Hasil uji gerakan sudut di simulasi selama 10 detik.}
-  \label{tab:simulationangulartestresults}
-  \centering
-  \begin{tabular}{c|c|c}
-    \toprule
-    Kecepatan   & Orientasi di Simulasi & Orientasi Odometri \\
-    \midrule
-    z (rad/min) & z (deg)               & z (deg) \\
-    \midrule
-    40          & 39.0                  & 39.0 \\
-    120         & 118.7                 & 118.7 \\
-    -40         & -39.2                 & -39.2 \\
-    -120        & -117.1                & -117.1 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\input{graphs/linear-movement-sim.tex}
+\input{graphs/angular-movement-sim.tex}
 
 Pengujian gerakan terbagi menjadi dua bagian,
-  pengujian gerakan linier dan pengujian gerakan sudut,
-  masing-masing diujikan selama 10 detik pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
-Seperti yang terlihat pada Tabel \ref{tab:simulationlineartestresults} dan Tabel \ref{tab:simulationangulartestresults},
-  posisi dan orientasi odometri yang diterima robot memiliki nilai yang sama dengan posisi dan orientasi model robot di simulasi.
-Hal ini terjadi karena nilai odometri yang dikirimkan oleh node \lstinline{dienen_robot_navigation} adalah nilai yang sama dengan transformasi model robot di simulasi.
+  pengujian gerakan linier dan pengujian gerakan putar,
+  masing-masing diujikan dengan berbagai macam kombinasi nilai kecepatan selama 3 detik pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
+Seperti yang terlihat pada gambar \ref{fig:linearmovementsim} dan gambar \ref{fig:angularmovementsim},
+  jarak dan orientasi akhir odometri yang diterima robot memiliki nilai yang relatif sama dengan jarak dan orientasi akhir dari nilai perkiraan dari kecepatan yang diberikan dan pengukuran dari titik awal model robot di simulasi.
+Dari hasil tersebut,
+  persentase \emph{error} dari nilai odometri dibandingkan rata-rata nilai perkiraan dan pengukuran di simulasi adalah sebesar 2.6\%.
 
-\begin{table}
-  \caption{Hasil uji gerakan linier pada robot fisik selama 10 detik.}
-  \label{tab:realrobotlineartestresults}
-  \centering
-  \begin{tabular}{cc|cc|cc}
-    \toprule
-    \multicolumn{2}{c|}{Kecepatan} &
-    \multicolumn{2}{|c|}{Posisi di Dunia Nyata} &
-    \multicolumn{2}{|c}{Posisi Odometri} \\
-    \midrule
-    x (m/min) & y (m/min) & x (m) & y (m) & x(m)  & y(m) \\
-    \midrule
-    40        & 0         & 5.1   & -0.1  & 5.2   & 0.1 \\
-    60        & 0         & 8.1   & 0.1   & 7.9   & 0.0 \\
-    -40       & 0         & -5.3  & 0.1   & -5.2  & 0.1 \\
-    0         & 40        & 0.0   & 5.4   & 0.1   & 5.2 \\
-    0         & -40       & 0.2   & -5.1  & -0.1  & -5.5 \\
-    40        & 20        & 5.2   & 3.1   & 5.3   & 3.1 \\
-    -20       & 40        & -3.1  & 5.3   & -2.9  & 5.3 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\input{graphs/linear-movement-real.tex}
+\input{graphs/angular-movement-real.tex}
 
-\begin{table}
-  \caption{Hasil uji gerakan sudut pada robot fisik selama 10 detik.}
-  \label{tab:realrobotangulartestresults}
-  \centering
-  \begin{tabular}{c|c|c}
-    \toprule
-    Kecepatan   & Orientasi di Dunia Nyata  & Orientasi Odometri \\
-    \midrule
-    z (rad/min) & z (deg)                   & z (deg) \\
-    \midrule
-    40          & 41.0                      & 39.6 \\
-    120         & 120.0                     & 119.3 \\
-    -40         & -40.0                     & -39.6 \\
-    -120        & -119.0                    & -116.2 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-Berbeda dengan pengujian di lingkungan simulasi,
-  pengujian di dunia nyata memiliki hasil yang berbeda antara pengukuran langsung dengan nilai odometri yang diterima oleh robot.
-Seperti yang terlihat pada Tabel \ref{tab:realrobotlineartestresults} dan Tabel \ref{tab:realrobotangulartestresults},
-  terdapat perbedaan antara keduanya yang disebabkan oleh ketidakakuratan yang ada pada sensor yang digunakan untuk mendapatkan nilai posisi dan orientasi.
+Berbeda dengan hasil pengujian di lingkungan simulasi,
+  hasil pengujian di dunia nyata memiliki sedikit perbedaan antara nilai perkiraan dan pengukuran dengan nilai odometri yang diterima oleh robot.
+Seperti yang terlihat pada gambar \ref{fig:linearmovementreal} dan gambar \ref{fig:angularmovementreal},
+  terdapat sedikit perbedaan di antara keduanya yang disebabkan oleh kombinasi berbagai faktor seperti ketidakakuratan pembacaan sensor dan terjadinya \emph{slip} ketika robot bergerak dengan akselerasi yang tinggi.
+Karena adanya faktor tersebut,
+  persentase \emph{error} dari nilai odometri dibandingkan rata-rata nilai perkiraan dan pengukuran pada robot fisik adalah sebesar 12.5\%.
 Walaupun begitu,
-  terlepas dari adanya perbedaan tingkat akurasi, dengan menggunakan \emph{node behavior} yang sama,
+  terlepas dari adanya perbedaan tingkat akurasi,
+  dengan menggunakan \emph{node behavior} yang sama,
   robot tergolong mampu melakukan perintah gerakan yang sesuai ketika diujikan di simulasi maupun di dunia nyata.

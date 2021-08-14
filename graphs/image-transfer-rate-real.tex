@@ -1,0 +1,34 @@
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.2\textwidth,
+        width=0.45\textwidth,
+        xlabel=\IfLanguageName{english}{Data Size}{Ukuran Data} (KB),
+        ylabel=\IfLanguageName{english}{Rate}{Frekuensi} (hz),
+        legend style={
+          at={(0.5,1.5)},
+          anchor=north,
+          legend columns=-1,
+        },
+        ymajorgrids,
+        ymin=0,
+        ymax=40,
+      ]
+      \addplot table[x=size,y=rate,col sep=comma]{data/image-transfer-real.csv};
+      \addplot table[x=size,y=rate,col sep=comma]{data/image-transfer-bd-real.csv};
+      \IfLanguageName{english}{
+        \legend{Same Device, Between Device}
+      }{
+        \legend{Sesama Perangkat, Antar Perangkat}
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \IfLanguageName{english}{
+    \caption{Rate results of image transfer on the real robot.}
+  }{
+    \caption{Hasil frekuensi dari pengiriman citra pada robot fisik.}
+  }
+  \label{fig:imagetransferratereal}
+\end{figure}

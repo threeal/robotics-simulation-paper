@@ -1,0 +1,38 @@
+\subsection{Pengujian Pengiriman Citra}
+\label{subsec:imagetransfertesting}
+
+\input{figures/rosgraph/image-transfer-sim.tex}
+\input{figures/rosgraph/image-transfer-real.tex}
+
+Pengujian pengiriman citra dilakukan dengan menjalankan \emph{node} \lstinline{image_viewer} yang akan menampilkan citra yang diterima dalam bentuk GUI.
+Seperti yang terlihat pada gambar \ref{fig:rosgraphimagetransfersim},
+  di simulasi,
+  \emph{node} \lstinline{image_viewer} akan terhubung dengan \emph{node} \lstinline{camera_plugin} yang akan mengirimkan data citra melalui \emph{topic} \lstinline{/camera/image_raw}.
+Sedangkan untuk pengujian di dunia nyata,
+  seperti yang terlihat pada gambar \ref{fig:rosgraphimagetransferreal},
+  peran dari \emph{node} \lstinline{camera_plugin} akan digantikan oleh \emph{node} \lstinline{v4l2_camera} yang akan mengirimkan data citra yang berasal dari device camera yang ada pada robot fisik.
+
+\input{graphs/image-transfer-delay-sim.tex}
+\input{graphs/image-transfer-rate-sim.tex}
+
+Pengujian pengiriman citra dilakukan pada kondisi pengiriman pada perangkat yang sama dan pada pengiriman antara dua perangkat yang berbeda.
+Pengujian tersebut masing-masing dilakukan dengan berbagai macam kombinasi nilai resolusi dari 160x120 hingga 1920x1080 pada robot virtual di lingkungan simulasi maupun pada robot fisik di dunia nyata.
+Seperti yang terlihat pada gambar \ref{fig:imagetransferdelaysim} dan gambar \ref{fig:imagetransferratesim},
+  di simulasi,
+  nilai \emph{delay} yang dihasilkan cenderung naik sedangkan nilai frekuensi yang dihasilkan cenderung turun seiring dengan besarnya data yang dikirimkan.
+Dari hasil tersebut,
+  hingga resolusi 800x600 ($\pm2500$ KB),
+  pengiriman citra di simulasi mampu menghasilkan \emph{delay} rendah di bawah 50 ms dan frekuensi stabil di atas 90\% dari nilai normalnya.
+
+\input{graphs/image-transfer-delay-real.tex}
+\input{graphs/image-transfer-rate-real.tex}
+
+Sedangkan,
+  pada robot fisik,
+  seperti yang terlihat pada gambar \ref{fig:imagetransferdelayreal} dan gambar \ref{fig:imagetransferratereal},
+  hasil yang didapatkan juga relatif sama dimana nilai \emph{delay} cenderung naik sedangkan nilai frekuensi cenderung turun.
+Namun,
+  berbeda dengan hasil pengujian di lingkungan simulasi,
+  dari hasil pada robot fisik tersebut,
+  didapatkan bahwa hingga resolusi 640x480 ($\pm1500$ KB),
+  pengiriman citra pada robot real mampu menghasilkan \emph{delay} rendah di bawah 50 ms dan frekuensi stabil di atas 90\% dari nilai normalnya.

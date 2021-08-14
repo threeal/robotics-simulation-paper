@@ -1,0 +1,34 @@
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.2\textwidth,
+        width=0.45\textwidth,
+        xlabel=\IfLanguageName{english}{Data Size}{Ukuran Data} (KB),
+        ylabel=\IfLanguageName{english}{Delay}{\emph{Delay}} (ms),
+        legend style={
+          at={(0.5,1.5)},
+          anchor=north,
+          legend columns=-1,
+        },
+        ymajorgrids,
+        ymin=0,
+        ymax=125,
+      ]
+      \addplot table[x=size,y=delay,col sep=comma]{data/image-transfer-sim.csv};
+      \addplot table[x=size,y=delay,col sep=comma]{data/image-transfer-bd-sim.csv};
+      \IfLanguageName{english}{
+        \legend{Same Device, Between Device}
+      }{
+        \legend{Sesama Perangkat, Antar Perangkat}
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \IfLanguageName{english}{
+    \caption{Delay results of image transfer in the simulation.}
+  }{
+    \caption{Hasil \emph{delay} dari pengiriman citra di simulasi.}
+  }
+  \label{fig:imagetransferdelaysim}
+\end{figure}
