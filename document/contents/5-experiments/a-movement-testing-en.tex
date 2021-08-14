@@ -7,9 +7,9 @@
 Movement testing is done by running the \lstinline{move_for} node as a behavior node that will instruct the robot to move at a certain speed for a certain period of time.
 As shown in Figure \ref{fig:rosgraphmovementsim},
   in the simulation,
-  the \lstinline{move_for} node will be connected to the \lstinline{dienen_robot_navigation} node to control the speed of the robot using the \lstinline{/navigation/maneuver_input} topic.
+  the \lstinline{move_for} node will be connected to the \lstinline{navigation_plugin} node to control the speed of the robot using the \lstinline{/navigation/maneuver_input} topic.
 As for testing in the real world, as shown in Figure \ref{fig:rosgraphmovementreal},
-  the role of the \lstinline{dienen_robot_navigation} node which manages the navigation on the virtual robot will be replaced by the \lstinline{navigation} node which manages the navigation on the real robot.
+  the role of the \lstinline{navigation_plugin} node which manages the navigation on the virtual robot will be replaced by the \lstinline{navigation} node which manages the navigation on the real robot.
 
 \input{graphs/linear-movement-sim.tex}
 \input{graphs/angular-movement-sim.tex}
