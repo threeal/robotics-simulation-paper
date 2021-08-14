@@ -5,10 +5,11 @@
 \input{figures/rosgraph/movement-real.tex}
 
 Movement testing is done by running the \lstinline{move_for} node as a behavior node that will instruct the robot to move at a certain speed for a certain period of time.
-As shown in Figure \ref{fig:rosgraphmovementsim},
+As shown in figure \ref{fig:rosgraphmovementsim},
   in the simulation,
   the \lstinline{move_for} node will be connected to the \lstinline{navigation_plugin} node to control the speed of the robot using the \lstinline{/navigation/maneuver_input} topic.
-As for testing in the real world, as shown in Figure \ref{fig:rosgraphmovementreal},
+As for testing in the real world,
+  as shown in figure \ref{fig:rosgraphmovementreal},
   the role of the \lstinline{navigation_plugin} node which manages the navigation on the virtual robot will be replaced by the \lstinline{navigation} node which manages the navigation on the real robot.
 
 \input{graphs/linear-movement-sim.tex}
@@ -17,16 +18,17 @@ As for testing in the real world, as shown in Figure \ref{fig:rosgraphmovementre
 The movement test is divided into two parts,
   linear movement testing and angular movement testing,
   each is tested with various combinations of speed values for 3 seconds on a virtual robot in a simulation environment and on a real robot in the real world.
-As shown in Figure \ref{fig:linearmovementsim} and Figure \ref{fig:angularmovementsim},
+As shown in figure \ref{fig:linearmovementsim} and figure \ref{fig:angularmovementsim},
   the last distance and orientation of the odometry received by the robot relatively has the same value as the last distance and orientation of the estimated value from the given speed and the measurement from the starting point of the robot model in the simulation.
-From these results, the error percentage of the odometry value compared to the average of estimated and the measurement value in the simulation is 2.6\%.
+From these results,
+  the error percentage of the odometry value compared to the average of estimated and the measurement value in the simulation is 2.6\%.
 
 \input{graphs/linear-movement-real.tex}
 \input{graphs/angular-movement-real.tex}
 
 In contrast to the testing results in the simulation environment,
   movement testing results in the real world have a little difference between the estimated and measurement value and the odometry values received by the robot.
-As shown in Figure \ref{fig:linearmovementreal} and Figure \ref{fig:angularmovementreal},
+As shown in figure \ref{fig:linearmovementreal} and figure \ref{fig:angularmovementreal},
   there is a difference between the two value due to combinations of several factors like inaccuracies in the sensors and the occurance of slip when the robot move with high acceleration.
 Because of these factors,
   the error percentage of the odometry value compared to the average of estimated and the measurement value on the real robot is 12.5\%.

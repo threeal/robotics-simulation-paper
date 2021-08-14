@@ -4,7 +4,7 @@
 \input{figures/simulation-controller.tex}
 
 The robot controller used for this simulation will be developed using ROS 2.
-The controller will be separated into several parts in the form of ROS 2 nodes as shown in Figure \ref{fig:simulationcontroller}.
+The controller will be separated into several parts in the form of ROS 2 nodes as shown in figure \ref{fig:simulationcontroller}.
 Each existing node will be connected to each other using the ROS 2's interprocess communication system in the form of topics and services.
 
 The main part of the robot controller is the behavior node which contains a program that regulates all robot actions based on data obtained from the sensors in the simulation.
@@ -15,7 +15,7 @@ Those four nodes will be attached in the scope of the Gazebo simulator as Gazebo
 \input{figures/real-robot-controller.tex}
 
 This system is designed separately so that the behavior nodes tested in the simulation environment could be used directly on the real robot.
-As shown in Figure \ref{fig:realrobotcontroller},
+As shown in figure \ref{fig:realrobotcontroller},
   the transfer of controllers to the real robot can be done by changing the entire scope of the Gazebo simulator,
   which consists of the four nodes mentioned earlier,
   into nodes that process sensors and actuators on the real robot.

@@ -4,7 +4,7 @@
 \input{figures/simulation-controller.tex}
 
 Kontroler robot yang digunakan untuk simulasi ini akan dikembangkan menggunakan ROS 2.
-Kontroler tersebut akan dipisah menjadi beberapa bagian dalam bentuk \emph{ROS 2 node} seperti yang terlihat pada Gambar \ref{fig:simulationcontroller}.
+Kontroler tersebut akan dipisah menjadi beberapa bagian dalam bentuk \emph{ROS 2 node} seperti yang terlihat pada gambar \ref{fig:simulationcontroller}.
 Setiap \emph{node} yang ada akan terhubung satu sama lain menggunakan sistem komunikasi antar proses ROS 2 yang berupa \emph{topics} dan \emph{services}.
 
 Bagian utama dari kontroler robot tersebut adalah \emph{node behavior} yang berisi program yang mengatur segala tindakan robot berdasarkan data yang didapat dari sensor yang ada di simulasi.
@@ -15,7 +15,7 @@ Keempat \emph{node} tersebut akan terpasang di dalam cakupan simulator Gazebo se
 \input{figures/real-robot-controller.tex}
 
 Sistem ini dirancang secara terpisah agar \emph{node behavior} yang diujikan di lingkungan simulasi bisa langsung bekerja pada robot fisik.
-Seperti yang terlihat pada Gambar \ref{fig:realrobotcontroller},
+Seperti yang terlihat pada gambar \ref{fig:realrobotcontroller},
   transfer kontroler ke robot fisik dapat dilakukan dengan mengubah keseluruhan cakupan yang ada di simulator Gazebo,
   yang berupa empat \emph{node} yang telah disebutkan sebelumnya,
   menjadi \emph{node} yang memproses sensor dan aktuator yang ada pada robot fisik.

@@ -5,10 +5,11 @@
 \input{figures/rosgraph/movement-real.tex}
 
 Pengujian gerakan dilakukan dengan menjalankan \emph{node} \lstinline{move_for} sebagai \emph{node behavior} yang akan memerintahkan robot untuk bergerak dengan kecepatan tertentu selama kurun waktu tertentu.
-Seperti yang terlihat pada Gambar \ref{fig:rosgraphmovementsim},
+Seperti yang terlihat pada gambar \ref{fig:rosgraphmovementsim},
   di simulasi,
   \emph{node} \lstinline{move_for} akan terhubung dengan \emph{node} \lstinline{navigation_plugin} untuk mengatur kecepatan dari robot yang ada di simulasi menggunakan \emph{topic} \lstinline{/navigation/maneuver_input}.
-Sedangkan untuk pengujian di dunia nyata, seperti yang terlihat pada Gambar \ref{fig:rosgraphmovementreal},
+Sedangkan untuk pengujian di dunia nyata,
+  seperti yang terlihat pada gambar \ref{fig:rosgraphmovementreal},
   peran dari \emph{node} \lstinline{navigation_plugin} yang mengatur navigasi pada robot virtual akan digantikan oleh \emph{node} \lstinline{navigation} yang mengatur navigasi yang ada pada robot fisik.
 
 \input{graphs/linear-movement-sim.tex}
@@ -17,16 +18,17 @@ Sedangkan untuk pengujian di dunia nyata, seperti yang terlihat pada Gambar \ref
 Pengujian gerakan terbagi menjadi dua bagian,
   pengujian gerakan linier dan pengujian gerakan putar,
   masing-masing diujikan dengan berbagai macam kombinasi nilai kecepatan selama 3 detik pada robot virtual di lingkungan simulasi dan pada robot fisik di dunia nyata.
-Seperti yang terlihat pada Gambar \ref{fig:linearmovementsim} dan Gambar \ref{fig:angularmovementsim},
+Seperti yang terlihat pada gambar \ref{fig:linearmovementsim} dan gambar \ref{fig:angularmovementsim},
   jarak dan orientasi akhir odometri yang diterima robot memiliki nilai yang relatif sama dengan jarak dan orientasi akhir dari nilai perkiraan dari kecepatan yang diberikan dan pengukuran dari titik awal model robot di simulasi.
-Dari hasil tersebut, persentase \emph{error} dari nilai odometri dibandingkan rata-rata nilai perkiraan dan pengukuran di simulasi adalah sebesar 2.6\%.
+Dari hasil tersebut,
+  persentase \emph{error} dari nilai odometri dibandingkan rata-rata nilai perkiraan dan pengukuran di simulasi adalah sebesar 2.6\%.
 
 \input{graphs/linear-movement-real.tex}
 \input{graphs/angular-movement-real.tex}
 
 Berbeda dengan hasil pengujian di lingkungan simulasi,
   hasil pengujian di dunia nyata memiliki sedikit perbedaan antara nilai perkiraan dan pengukuran dengan nilai odometri yang diterima oleh robot.
-Seperti yang terlihat pada Gambar \ref{fig:linearmovementreal} dan Gambar \ref{fig:angularmovementreal},
+Seperti yang terlihat pada gambar \ref{fig:linearmovementreal} dan gambar \ref{fig:angularmovementreal},
   terdapat sedikit perbedaan di antara keduanya yang disebabkan oleh kombinasi berbagai faktor seperti ketidakakuratan pembacaan sensor dan terjadinya \emph{slip} ketika robot bergerak dengan akselerasi yang tinggi.
 Karena adanya faktor tersebut,
   persentase \emph{error} dari nilai odometri dibandingkan rata-rata nilai perkiraan dan pengukuran pada robot fisik adalah sebesar 12.5\%.
