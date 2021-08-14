@@ -3,10 +3,9 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.2\textwidth,
+        height=0.21\textwidth,
         width=0.45\textwidth,
-        ylabel=\IfLanguageName{english}{Distance}{Jarak} (meter),
-        xlabel=\IfLanguageName{english}{K Attempt}{Percobaan Ke-},
+        ylabel=\IfLanguageName{english}{Distance}{Jarak} (meter),xlabel=\IfLanguageName{english}{$K^{th}$ Attempt}{Percobaan Ke-$K$},
         legend style={
           at={(0.5,1.5)},
           anchor=north,
@@ -25,16 +24,16 @@
       \addplot table[x=index,y=measureddistance,col sep=comma]{data/linear-movement-real.csv};
       \addplot table[x=index,y=odometrydistance,col sep=comma]{data/linear-movement-real.csv};
       \IfLanguageName{english}{
-        \legend{Expected,Measured,Odometry}
+        \legend{Estimated,Measurement,Odometry}
       }{
-        \legend{\emph{Expected},\emph{Measured},\emph{Odometry}}
+        \legend{Perkiraan,Pengukuran,Odometri}
       }
     \end{axis}
   \end{tikzpicture}
   \IfLanguageName{english}{
-    \caption{Last distance results of linear movement in the real robot.}
+    \caption{Last distance results of linear movement on the real robot.}
   }{
-    \caption{Hasil jarak akhir dari gerakan linier pada \emph{real robot}.}
+    \caption{Hasil jarak akhir dari gerakan linier pada robot fisik.}
   }
   \label{fig:linearmovementreal}
 \end{figure}

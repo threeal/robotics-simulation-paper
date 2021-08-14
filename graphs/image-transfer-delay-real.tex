@@ -6,7 +6,7 @@
         height=0.2\textwidth,
         width=0.45\textwidth,
         xlabel=\IfLanguageName{english}{Data Size}{Ukuran Data} (KB),
-        ylabel=\IfLanguageName{english}{Delay}{\emph{Delay}} (ms),
+        xlabel=\IfLanguageName{english}{$K^{th}$ Attempt}{Percobaan Ke-$K$},
         legend style={
           at={(0.5,1.5)},
           anchor=north,
@@ -26,9 +26,9 @@
     \end{axis}
   \end{tikzpicture}
   \IfLanguageName{english}{
-    \caption{Delay results of image transfer in the real robot.}
+    \caption{Delay results of image transfer on the real robot.}
   }{
-    \caption{Hasil \emph{delay} dari pengiriman citra di \emph{real robot}.}
+    \caption{Hasil \emph{delay} dari pengiriman citra pada robot fisik.}
   }
   \label{fig:imagetransferdelayreal}
 \end{figure}

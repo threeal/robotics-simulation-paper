@@ -3,10 +3,9 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.2\textwidth,
+        height=0.19\textwidth,
         width=0.45\textwidth,
-        ylabel=\IfLanguageName{english}{Distance}{Jarak} (meter),
-        xlabel=\IfLanguageName{english}{K Attempt}{Percobaan Ke-},
+        ylabel=\IfLanguageName{english}{Distance}{Jarak} (meter),xlabel=\IfLanguageName{english}{$K^{th}$ Attempt}{Percobaan Ke-$K$},
         legend style={
           at={(0.5,1.5)},
           anchor=north,
@@ -25,9 +24,9 @@
       \addplot table[x=index,y=measureddistance,col sep=comma]{data/linear-movement-sim.csv};
       \addplot table[x=index,y=odometrydistance,col sep=comma]{data/linear-movement-sim.csv};
       \IfLanguageName{english}{
-        \legend{Expected,Measured,Odometry}
+        \legend{Estimated,Measurement,Odometry}
       }{
-        \legend{\emph{Expected},\emph{Measured},\emph{Odometry}}
+        \legend{Perkiraan,Pengukuran,Odometri}
       }
     \end{axis}
   \end{tikzpicture}

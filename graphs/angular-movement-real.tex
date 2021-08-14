@@ -3,10 +3,10 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        height=0.2\textwidth,
+        height=0.21\textwidth,
         width=0.45\textwidth,
         ylabel=\IfLanguageName{english}{Angle}{Sudut} (degree),
-        xlabel=\IfLanguageName{english}{K Attempt}{Percobaan Ke-},
+        xlabel=\IfLanguageName{english}{$K^{th}$ Attempt}{Percobaan Ke-$K$},
         legend style={
           at={(0.5,1.5)},
           anchor=north,
@@ -25,16 +25,16 @@
       \addplot table[x=index,y=measured,col sep=comma]{data/angular-movement-real.csv};
       \addplot table[x=index,y=odometry,col sep=comma]{data/angular-movement-real.csv};
       \IfLanguageName{english}{
-        \legend{Expected,Measured,Odometry}
+        \legend{Estimated,Measurement,Odometry}
       }{
-        \legend{\emph{Expected},\emph{Measured},\emph{Odometry}}
+        \legend{Perkiraan,Pengukuran,Odometri}
       }
     \end{axis}
   \end{tikzpicture}
   \IfLanguageName{english}{
-    \caption{Last orientation results of angular movement in the real robot.}
+    \caption{Last orientation results of angular movement on the real robot.}
   }{
-    \caption{Hasil orientasi akhir dari gerakan putar pada \emph{real robot}.}
+    \caption{Hasil orientasi akhir dari gerakan putar pada robot fisik.}
   }
   \label{fig:angularmovementreal}
 \end{figure}

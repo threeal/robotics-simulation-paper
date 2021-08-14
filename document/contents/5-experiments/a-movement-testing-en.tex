@@ -16,17 +16,21 @@ As for testing in the real world, as shown in Figure \ref{fig:rosgraphmovementre
 
 The movement test is divided into two parts,
   linear movement testing and angular movement testing,
-  each is tested for 10 seconds on a virtual robot in a simulation environment and on a real robot in the real world.
+  each is tested with various combinations of speed values for 3 seconds on a virtual robot in a simulation environment and on a real robot in the real world.
 As shown in Figure \ref{fig:linearmovementsim} and Figure \ref{fig:angularmovementsim},
-  the position and orientation of the odometry received by the robot has the same value as the position and orientation of the robot model in the simulation.
-This happens because the odometry value sent by the \lstinline{dienen_robot_navigation} node is the same value as the robot model transformation in the simulation.
+  the last distance and orientation of the odometry received by the robot relatively has the same value as the last distance and orientation of the estimated value from the given speed and the measurement from the starting point of the robot model in the simulation.
+From these results, the error percentage of the odometry value compared to the average of estimated and the measurement value in the simulation is 2.6\%.
 
 \input{graphs/linear-movement-real.tex}
 \input{graphs/angular-movement-real.tex}
 
-In contrast to the movement testing in the simulation environment,
-  movement testing in the real world have different results between direct measurements and the odometry values received by the robot.
+In contrast to the testing results in the simulation environment,
+  movement testing results in the real world have a little difference between the estimated and measurement value and the odometry values received by the robot.
 As shown in Figure \ref{fig:linearmovementreal} and Figure \ref{fig:angularmovementreal},
-  there is a difference between the two value due to inaccuracies in the sensors used to obtain position and orientation values.
-However, despite the differences in the level of accuracy, by using the same node behavior,
+  there is a difference between the two value due to combinations of several factors like inaccuracies in the sensors and the occurance of slip when the robot move with high acceleration.
+Because of these factors,
+  the error percentage of the odometry value compared to the average of estimated and the measurement value on the real robot is 12.5\%.
+However,
+  despite the differences in the level of accuracy,
+  by using the same node behavior,
   the robot is capable of carrying out appropriate movement commands when tested in the simulation and the real world.
