@@ -1,0 +1,40 @@
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.2\textwidth,
+        width=0.45\textwidth,
+        ylabel=\IfLanguageName{english}{Angle}{Sudut} (degree),
+        xlabel=\IfLanguageName{english}{K Attempt}{Percobaan Ke-},
+        legend style={
+          at={(0.5,1.5)},
+          anchor=north,
+          legend columns=-1,
+        },
+        ymajorgrids,
+        bar width=5pt,
+        ybar=0pt,
+        xmin=0.1,
+        xmax=6.9,
+        ymin=0,
+        xtick distance=1,
+        ytick distance=90,
+      ]
+      \addplot table[x=index,y=expected,col sep=comma]{data/angular-movement-sim.csv};
+      \addplot table[x=index,y=measured,col sep=comma]{data/angular-movement-sim.csv};
+      \addplot table[x=index,y=odometry,col sep=comma]{data/angular-movement-sim.csv};
+      \IfLanguageName{english}{
+        \legend{Expected,Measured,Odometry}
+      }{
+        \legend{\emph{Expected},\emph{Measured},\emph{Odometry}}
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \IfLanguageName{english}{
+    \caption{Last orientation results of angular movement in the simulation.}
+  }{
+    \caption{Hasil orientasi akhir dari gerakan putar di simulasi.}
+  }
+  \label{fig:angularmovementsim}
+\end{figure}

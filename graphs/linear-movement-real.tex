@@ -1,0 +1,40 @@
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        height=0.2\textwidth,
+        width=0.45\textwidth,
+        ylabel=\IfLanguageName{english}{Distance}{Jarak} (meter),
+        xlabel=\IfLanguageName{english}{K Attempt}{Percobaan Ke-},
+        legend style={
+          at={(0.5,1.5)},
+          anchor=north,
+          legend columns=-1,
+        },
+        ymajorgrids,
+        bar width=3pt,
+        ybar=0pt,
+        xmin=0.1,
+        xmax=12.9,
+        ymin=0,
+        xtick distance=1,
+        ytick distance=1,
+      ]
+      \addplot table[x=index,y=expecteddistance,col sep=comma]{data/linear-movement-real.csv};
+      \addplot table[x=index,y=measureddistance,col sep=comma]{data/linear-movement-real.csv};
+      \addplot table[x=index,y=odometrydistance,col sep=comma]{data/linear-movement-real.csv};
+      \IfLanguageName{english}{
+        \legend{Expected,Measured,Odometry}
+      }{
+        \legend{\emph{Expected},\emph{Measured},\emph{Odometry}}
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \IfLanguageName{english}{
+    \caption{Last distance results of linear movement in the real robot.}
+  }{
+    \caption{Hasil jarak akhir dari gerakan linier pada \emph{real robot}.}
+  }
+  \label{fig:linearmovementreal}
+\end{figure}
