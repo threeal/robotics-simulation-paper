@@ -1,0 +1,37 @@
+\subsection{Pengujian \emph{depth camera}}
+\label{subsec:depthcameratesting}
+
+\input{figures/rosgraph/depth-camera-sim.tex}
+\input{figures/rosgraph/depth-camera-real.tex}
+
+Pengujian \emph{depth camera} dilakukan untuk menguji kemampuan \emph{depth camera} di simulasi dalam mensimulasikan perangkat \emph{depth camera},
+  sekaligus menguji abstraksi perangkat yang ada pada ROS 2.
+Pengujian ini dilakukan dengan menjalankan dua buah \emph{node} \lstinline{image_viewer} yang masing-masing akan menerima data citra warna dan citra kedalaman.
+Seperti yang terlihat pada gambar \ref{fig:rosgraphdepthcamerasim},
+  di simulasi,
+  masing-masing \emph{node} \lstinline{image_viewer} akan menerima data citra warna melalui \emph{topic} \lstinline{/depth_camera/image_raw} dan data citra kedalaman melalui \emph{topic} \lstinline{/depth_camera/depth/image_raw}.
+Sedangkan untuk pengujian di dunia nyata,
+  seperti yang terlihat pada gambar \ref{fig:rosgraphdepthcamerareal},
+  peran dari \emph{node} \lstinline{depth_camera_plugin} akan digantikan oleh \emph{node} \lstinline{v4l2_camera} yang akan mengirimkan data yang berasal dari perangkat Kinect V2 yang ada pada robot fisik.
+
+\input{figures/depth-camera/sim.tex}
+
+Hasilnya,
+  seperti yang terlihat pada gambar \ref{fig:depthcameraresultsim},
+  \emph{node} \lstinline{image_viewer} menampilkan data yang diterima dari simulasi dimana gambar kiri menunjukkan citra dengan tampilan berwarna,
+  sedangkan gambar kanan menunjukkan citra kedalaman dengan tampilan hitam putih.
+Pada citra kedalaman,
+  terangnya suatu titik pada citra tersebut menunjukkan posisi yang semakin jauh dari jangkauan titik pusat kamera.
+Sebagai contoh,
+  gelapnya bentuk meja pada citra tersebut menunjukkan posisi objek tersebut lebih dekat dibandingkan objek yang lain.
+
+\input{figures/depth-camera/real.tex}
+
+Sedangkan,
+  pada robot fisik hasil yang didapatkan juga relatif sama.
+Seperti yang terlihat pada gambar \ref{fig:depthcameraresultreal},
+  gambar kiri menunjukkan citra warna dan gambar kanan menunjukkan citra kedalaman.
+Namun,
+  pada gambar tersebut,
+  citra kedalaman memiliki hasil yang lebih terang,
+  hal ini terjadi karena jangkauan perangkat Kinect V2 yang lebih dekat (4.5 meter) dibandingkan jangkauan yang diatur pada \emph{depth camera} yang ada di simulasi.
